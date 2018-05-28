@@ -1,0 +1,199 @@
+title = "Product"
+readonly = false
+references = []
+
+[[routes]]
+	id="get_all_products"
+	name="Get All Products"
+	method="GET"
+	url="/products"
+	title="Get all products."
+	description="""Get all Products associated with your shop. \
+	"""
+
+	[[routes.response]]
+		name="products"
+		type="array"
+		arrtype="object"
+		model="product"
+		example=""
+		description="""The list of products defined by your shop. \
+			"""
+
+[[routes]]
+	id="get_product"
+	name="Get Product"
+	method="GET"
+	url="/products/{product_id}"
+	title="Get a product."
+	description="Get a product by it's ID."
+
+	[[routes.parameters]]
+		name="product_id"
+		type="mixed"
+		required=true
+		example="sku_12345"
+		description="""The product identity. This method allows you to identify the product \
+			with one of three different values:
+			<ul>
+				<li>ID - the database ID</li>
+				<li>SKU - the MyCloud assigned SKU</li>
+				<li>ShopSku - the shop assigned SKU</li>
+			</ul>
+		"""
+
+	[[routes.response]]
+		name="product"
+		type="object"
+		model="product"
+		example=""
+		description="The Product object identified by the id."
+
+
+[[routes]]
+	id="create_product"
+	name="Create Product"
+	method="POST"
+	url="/products"
+	title="Create a new product."
+	description="""Create a new product with the specified attributes. \
+	"""
+
+	[[routes.parameters]]
+		name="shop_sku"
+		type="string"
+		required=false
+		example="sku_7832598"
+		description="The SKU assigned by the shop."
+
+	[[routes.parameters]]
+		name="name"
+		type="string"
+		required=true
+		example="Cool Glasses"
+		description="The name of the product being created."
+
+	[[routes.parameters]]
+		name="description"
+		type="string"
+		required=true
+		example="Fashionable glasses with no magnification."
+		description="The description of the product being created."
+
+	[[routes.parameters]]
+		name="cost"
+		type="integer"
+		required=false
+		example="129"
+		description="The price the shop pays to purchase this product."
+
+	[[routes.parameters]]
+		name="price"
+		type="integer"
+		required=true
+		example="199"
+		description="The price the shop charges buyers to purchase this product."
+
+	[[routes.response]]
+		name="product"
+		type="object"
+		model="product"
+		example=""
+		description="The created product."
+
+
+[[routes]]
+	id="update_product"
+	name="Update Product"
+	method="PATCH"
+	url="/products/{product_id}"
+	title="Update an existing product."
+	description="""Update an existing product with the specified parameters. \
+	You can provide any of the update parameters. Parameters specified will update \
+	those fields of the product in the database. Other fields will be left as is. \
+	"""
+
+	[[routes.parameters]]
+		name="product_id"
+		type="mixed"
+		required=true
+		example="sku_12345"
+		description="""The product identity. This method allows you to identify the product \
+			with one of three different values: \
+			<ul> \
+				<li>ID - the database ID</li> \
+				<li>SKU - the MyCloud assigned SKU</li> \
+				<li>ShopSku - the shop assigned SKU</li> \
+			</ul> \
+		"""
+	[[routes.parameters]]
+		name="shop_sku"
+		type="string"
+		required=false
+		example="sku_7832598"
+		description="The SKU assigned by the shop."
+
+	[[routes.parameters]]
+		name="name"
+		type="string"
+		required=false
+		example="Cool Glasses"
+		description="The name of the product being created."
+
+	[[routes.parameters]]
+		name="description"
+		type="string"
+		required=false
+		example="Fashionable glasses with no magnification."
+		description="The description of the product being created."
+
+	[[routes.parameters]]
+		name="cost"
+		type="integer"
+		required=false
+		example="129"
+		description="The price the shop pays to purchase this product."
+
+	[[routes.parameters]]
+		name="price"
+		type="integer"
+		required=false
+		example="199"
+		description="The price the shop charges buyers to purchase this product."
+
+	[[routes.response]]
+		name="product"
+		type="object"
+		model="product"
+		example=""
+		description="The updated product."
+
+[[routes]]
+	id="delete_product"
+	name="Delete Product"
+	method="DELETE"
+	url="/products/{product_id}"
+	title="Delete an existing product."
+	description="""Delete an existing product. \
+	"""
+
+	[[routes.parameters]]
+		name="product_id"
+		type="mixed"
+		required=true
+		example="sku_12345"
+		description="""The product identity. This method allows you to identify the product \
+			with one of three different values: \
+			<ul> \
+				<li>ID - the database ID</li> \
+				<li>SKU - the MyCloud assigned SKU</li> \
+				<li>ShopSku - the shop assigned SKU</li> \
+			</ul> \
+		"""
+
+	[[routes.response]]
+		name="product"
+		type="object"
+		model="product"
+		example=""
+		description="The product that was deleted."

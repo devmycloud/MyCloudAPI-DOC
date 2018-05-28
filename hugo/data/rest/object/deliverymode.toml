@@ -1,0 +1,22 @@
+name="deliverymode"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="This is the delivery mode's database key."
+[[fields]]
+	name="code"
+	type="integer"
+	example="MA002"
+	description="This is the delivery mode's MyCloud internal identity code."
+[[fields]]
+	name="name"
+	type="string"
+	example="Kerry Express"
+	description="This is the delivery mode's name."
+[[fields]]
+	name="contact"
+	type="string"
+	example='contact@kerry-express.com'
+	description="Contact url or information for delivery mode provider."

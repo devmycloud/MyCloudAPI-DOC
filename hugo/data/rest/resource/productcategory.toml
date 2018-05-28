@@ -1,0 +1,61 @@
+title = "ProductCategory"
+readonly = true
+references = []
+
+[[routes]]
+	id="get_all_productcategories"
+	name="Get All ProductCategories"
+	method="GET"
+	url="/productcategories"
+	title="Get all product categories."
+	description="""Get all product categories associated with your account. \
+	"""
+
+	[[routes.response]]
+		name="productcategories"
+		type="array"
+		arrtype="object"
+		model="productcategory"
+		example=""
+		description="""The list of product categories attached to your account. \
+		"""
+
+[[routes]]
+	id="get_productcategory"
+	name="Get ProductCategory"
+	method="GET"
+	url="/productcategories/{category_id}"
+	title="Get a ProductCategory."
+	description="Get a product category by it's ID."
+
+	[[routes.parameters]]
+		name="category_id"
+		type="integer"
+		required=true
+		example="1287"
+		description="""The database ID that identifies this product category. \
+		"""
+
+	[[routes.response]]
+		name="productcategory"
+		type="object"
+		model="productcategory"
+		example=""
+		description="The ProductCategory object identified by the id."
+
+
+[[routes]]
+	id="create_productcategory"
+	name="Create ProductCategory"
+	method="POST"
+	url="/productcategories"
+	title="Create a new product category."
+	description="""Create a new product category with the specified attributes. \
+	"""
+
+	[[routes.parameters]]
+		name="name"
+		type="string"
+		required=true
+		example="T-Shirts"
+		description="The name of this product category."

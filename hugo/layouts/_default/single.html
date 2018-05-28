@@ -1,0 +1,15 @@
+{{ partial "commonhead" . }}
+
+	<div class="page-content {{ .Params.content_class }}" data-source="layouts-default-single">
+	{{ if .Params.breadcrumbs }}
+	<div class="bread-crumb">
+		<a href="/">Home</a>
+		{{ range $crumb := .Params.breadcrumbs }}
+			&nbsp;&gt; {{ $crumb | safeHTML }}
+		{{ end }}
+	</div>
+	{{ end }}
+	{{ .Content }}
+	</div>
+
+{{ partial "commonfoot" . }}

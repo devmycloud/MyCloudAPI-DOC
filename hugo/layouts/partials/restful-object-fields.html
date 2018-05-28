@@ -1,0 +1,36 @@
+{{ .scratch.Set "origin" "rofs" }}
+{{ if .origin }}
+	{{ .scratch.Set "origin" (printf "%v-rofs" .origin) }}
+{{ end }}
+{{ $origin := .scratch.Get "origin" }}
+{{ $num_flds := len .fields }}
+{{ $new_level := add .level 1 }}
+{{ range $index, $field := .fields }}
+	{{ $.scratch.Set "cls" "" }}
+	{{ if ( eq $field.type "object" ) }}
+		{{ $.scratch.Set "cls" "node" }}
+	{{ else }}
+		{{ $.scratch.Set "cls" "leaf" }}
+	{{ end }}
+	{{ if ( eq $index 0 ) }}
+		{{ $.scratch.Set "cls" (printf "%v %s" ($.scratch.Get "cls") "first") }}
+	{{ end }}
+	{{ if eq (add $index 1) $num_flds }}
+		{{ $.scratch.Set "cls" (printf "%v %s" ($.scratch.Get "cls") "last") }}
+	{{ end }}
+
+	{{ if (eq $field.type "object") }}
+		{{ $class := $.scratch.Get "cls" }}
+		{{ $object := (index $.site.Data.rest.object $field.model ) }}
+		{{ $dict := ( dict "site" $.site "scratch" $.scratch "object" $object "modelpath" $.modelpath "level" $.level "class" $class "origin" $origin ) }}
+		{{ partial "restful-object" $dict }}
+	{{ else if (eq $field.type "array") }}
+		{{ $class := $.scratch.Get "cls" }}
+		{{ $dict := ( dict "site" $.site "scratch" $.scratch "array" $field "modelpath" $.modelpath "level" $.level "class" $class "origin" $origin ) }}
+		{{ partial "restful-array" $dict }}
+	{{ else }}
+		{{ $class := $.scratch.Get "cls" }}
+		{{ $dict := ( dict "scratch" $.scratch "field" $field "modelpath" $.modelpath "level" $.level "class" $class "origin" $origin ) }}
+		{{ partial "restful-object-field" $dict }}
+	{{ end }}
+{{ end }}

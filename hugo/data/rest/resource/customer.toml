@@ -1,0 +1,36 @@
+title = "Customer"
+readonly = false
+references = [ "customer" ]
+
+[[routes]]
+	id="get_all_customers"
+	name="Get All Customers"
+	method="GET"
+	url="/customers"
+	title="Get all customers."
+	description="""Get all Customers associated with your account. \
+	"""
+
+	[[routes.response]]
+		name="customers"
+		type="array"
+		arrtype="object"
+		model="customer"
+		example=""
+		description="The customers associated with your account."
+
+[[routes]]
+	id="get_customer"
+	name="Get Customer"
+	method="GET"
+	url="/customers/{id}"
+	title="Get a specific customers."
+	description="""Get the customer specified by the id paramter. \
+	"""
+
+	[[routes.response]]
+		name="customer"
+		type="object"
+		model="customer"
+		example=""
+		description="The customers specified by the id paramter."

@@ -1,0 +1,7 @@
+name="token"
+
+[[fields]]
+	name="token"
+	type="string"
+	example="87bddb3998b44272ab254c6447ed7f2452a1e581241944ea"
+	description="The JWT token to use in 'Authorization' headers for RESTful API calls."

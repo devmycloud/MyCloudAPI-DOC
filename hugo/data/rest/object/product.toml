@@ -1,0 +1,46 @@
+name="product"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="This is the product's database key."
+[[fields]]
+	name="sku"
+	type="string"
+	example="MAI002"
+	description="This is the product's MyCloud SKU. This is assigned by MyCloud and cannot be changed."
+[[fields]]
+	name="shop_sku"
+	type="string"
+	example="UPC_230458300"
+	description="This is the shop's product SKU. This is the SKU assigned by the shop."
+[[fields]]
+	name="name"
+	type="string"
+	example='Cool Glasses'
+	description="The name of the product as it should be presented to the buyer."
+[[fields]]
+	name="cost"
+	type="integer"
+	example='129'
+	description="The is the amount that the shop pays to buy the product."
+[[fields]]
+	name="price"
+	type="integer"
+	example='199'
+	description="""This is price that the shop typically sells the product for. \
+	This can be overridden within an order when defining the orderitem for this product. \
+	"""
+[[fields]]
+	name="description"
+	type="string"
+	example='Brand name glasses with no magnification perfect for a fashion statement.'
+	description="This is the product description that will be presented to the buyer."
+[[fields]]
+	name="supplier_reference"
+	type="string"
+	example='REF_987324_BA_1'
+	description="""This may be used for any purpose, but is intended to represent the reference \
+	that the product supplier uses to communicate with the shop for this product. \
+	"""

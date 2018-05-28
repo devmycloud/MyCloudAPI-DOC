@@ -1,0 +1,34 @@
+{{ .scratch.Set "modelpath" "" }}
+{{ if .modelpath }}
+	{{ .scratch.Set "modelpath" (printf "%v.%v" .modelpath .object.name) }}
+{{ else }}
+	{{ .scratch.Set "modelpath" .object.name }}
+{{ end }}
+{{ $modelpath := .scratch.Get "modelpath" }}
+
+{{ .scratch.Set "cls" .class }}
+{{ if ( eq .object.type "object" ) }}
+	{{ .scratch.Set "cls" (printf "%v %s" (.scratch.Get "cls") "node") }}
+{{ else }}
+	{{ .scratch.Set "cls" (printf "%v %s" (.scratch.Get "cls") "leaf") }}
+{{ end }}
+
+{{ .scratch.Set "origin" "robj" }}
+{{ if .origin }}
+	{{ .scratch.Set "origin" (printf "%v-robj" .origin) }}
+{{ end }}
+{{ $origin := .scratch.Get "origin" }}
+<div class="mc-table-tr" data-type="node" data-path="{{ $modelpath }}" data-origin="{{ $origin }}">
+	<div class="mc-table-td rest-field level-{{ .level }}">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>{{ .object.name }}</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A {{ .object.name }} object.</div>
+</div>
+{{ $newlevel := (add .level 1) }}
+{{ $dict := (dict "site" .site "scratch" .scratch "modelpath" $modelpath "level" $newlevel "fields" .object.fields "origin" $origin) }}
+{{ partial "restful-object-fields" $dict }}

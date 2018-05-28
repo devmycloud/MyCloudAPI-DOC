@@ -1,0 +1,17 @@
+name="orderitem"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="17839"
+	description="This is the order item's database key."
+[[fields]]
+	name="price"
+	type="integer"
+	example="299"
+	description="The price of the order item. This is used to set the specific price of this item for this order."
+[[fields]]
+	name="quantity"
+	type="integer"
+	example="1"
+	description="The number of order items purchased in this order."

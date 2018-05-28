@@ -1,0 +1,26 @@
+{{ partial "commonhead" . }}
+
+	<div class="page-content {{ .Params.content_class }}" data-source="layouts-default-list">
+	{{ if .Params.breadcrumbs }}
+	<div class="bread-crumb">
+		<a href="/">Home</a>
+		{{ range $crumb := .Params.breadcrumbs }}
+			&nbsp;&gt; {{ $crumb | safeHTML }}
+		{{ end }}
+	</div>
+	{{ end }}
+
+	<h1>{{ .Params.list_title }}</h1>
+	{{ .Content }}
+	{{ if (not (isset .Params "nolist")) }}
+		<ul>
+		{{ range .Data.Pages }}
+			<li>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</li>
+		{{ end }}
+		</ul>
+	{{ end }}
+	</div>
+
+{{ partial "commonfoot" . }}

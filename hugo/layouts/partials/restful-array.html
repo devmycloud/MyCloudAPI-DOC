@@ -1,0 +1,27 @@
+{{ .scratch.Set "array_path" (printf "%v[]" .array.name) }}
+{{ if .modelpath }}
+	{{ .scratch.Set "array_path" (printf "%v.%v[]" .modelpath .array.name) }}
+{{ end }}
+{{ $array_path := .scratch.Get "array_path" }}
+
+{{ .scratch.Set "origin" "ra" }}
+{{ if .origin }}
+	{{ .scratch.Set "origin" (printf "%v-ra" .origin) }}
+{{ end }}
+{{ $origin := .scratch.Get "origin" }}
+
+{{ if (eq .array.arrtype "object") }}
+	{{ $class := "node" }}
+	{{ $newlevel := add .level 1 }}
+
+	{{ $dict := ( dict "scratch" .scratch "field" .array "modelpath" .modelpath "level" .level "class" $class "orgin" $origin ) }}
+	{{ partial "restful-object-field" $dict }}
+
+	{{ $object := ( index .site.Data.rest.object .array.model ) }}
+	{{ $dict := ( dict "site" .site "scratch" .scratch "object" $object "modelpath" $array_path "level" $newlevel "class" $class "orgin" $origin ) }}
+	{{ partial "restful-object" $dict }}
+{{ else }}
+	{{ $class := "leaf" }}
+	{{ $dict := ( dict "scratch" .scratch "field" .array "modelpath" .modelpath "level" .level "class" $class "origin" $origin ) }}
+	{{ partial "restful-object-field" $dict }}
+{{ end }}

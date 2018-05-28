@@ -1,0 +1,124 @@
+<html>
+<head>
+	<meta name="generator" content="Hugo 0.30.2" />
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="./img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+	<link href="./css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api home">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="./"><img src="./img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="./readme/">README</a>
+				<a href="./apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="page-content home" data-source="layouts-index-html">
+		<h1>MyCloud API</h1>
+		<p>The MyCloud API is a RESTful API that provides MyCloud clients with
+secure programmatic access to the functions needed to manage their
+shop, products, inventory and orders. As a RESTful API built on
+standard protocols, the MyCloud API can be easily accessed using
+any programming language that supports HTTP protocols.</p>
+
+<p>This documentation will describe the RESTful API protocols, as well
+as the PHP SDK that is provided to simplify the use of the API when
+using the PHP programming language.</p>
+
+<p>The following links provide access to the two primary areas of
+documentation - the RESTful API specification and the PHP SDK.</p>
+
+<ul>
+<li><a href="apidocs/rest/">RESTful API Documentation</a></li>
+<li>&nbsp;</li>
+<li><a href="apidocs/php/">PHP SDK Documentation</a></li>
+</ul>
+
+<p>The MyCloud API is maintained on <a href="">GitHub</a> for your
+convenience. We will selectively accept pull requests from clients who have
+found bugs in the code. Or you may submit patch diffs directly
+to <a href="mailto:dev@mycloudfulfillment.com">dev@mycloudfulfillment.com</a>.</p>
+
+	</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+{{ partial "commonhead" . }}
+	<div class="page-content {{ .Params.content_class }}" data-source="layouts-index-html">
+		<h1>{{ .Params.list_title }}</h1>
+		{{ .Content }}
+	</div>
+{{ partial "commonfoot" . }}

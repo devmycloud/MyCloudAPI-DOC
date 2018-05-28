@@ -1,0 +1,167 @@
+{{ partial "commonhead" . }}
+
+	<div class="page-content restful-content" data-source="layouts-default-restmodel">
+
+	{{ if .Params.resourcename }}
+		{{ $resource := (index $.Site.Data.rest.resource .Params.resourcename ) }}
+		{{ if .Params.breadcrumbs }}
+		<div class="bread-crumb">
+			<a href="/">Home</a
+				>&nbsp;&gt; <a href="/apidocs/">API&nbsp;Docs</a
+				>&nbsp;&gt; <a href="/apidocs/rest/">RESTful&nbsp;Docs</a
+				>&nbsp;&gt; <a href="/apidocs/rest/models/">Models</a
+				>&nbsp;&gt; {{ .Params.title }}
+		</div>
+		{{ end }}
+
+		<h1>{{ $resource.title }} Model
+			{{ if $resource.readonly }}
+				<span class="read-only">[read-only]</span>
+			{{ end }}
+		</h1>
+
+		{{ .Content }}
+
+		<div class="restful-content">
+			<h2 id="restful_calls">RESTful Calls</h2>
+			<ul class="restful-call-list">
+			{{ range $route := $resource.routes }}
+				<li><a href="#{{ $route.id }}">{{ $route.name }}</a></li>
+			{{ end }}
+			</ul>
+
+			{{ range $route := $resource.routes }}
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="{{ $route.id }}">{{ $route.name }}
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">{{ $route.method }}</span
+						><span class="uri">{{ $route.url }}</span></p>
+
+					<p class="description">{{ $route.description }}</p>
+
+					<h4>Request Parameters</h4>
+					{{ if isset $route "parameters" }}
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							{{ range $param := $route.parameters }}
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">{{ $param.name }}</div>
+									<div class="mc-table-td">{{ $param.type }}</div>
+									{{ if ( $param.required ) }}
+										<div class="mc-table-td">Yes</div>
+									{{ else }}
+										<div class="mc-table-td">No</div>
+									{{ end }}
+									<div class="mc-table-td">{{ $param.example }}</div>
+									<div class="mc-table-td">
+										{{ $param.description | safeHTML }}
+									</div>
+								</div>
+							{{ end }}
+							</div>
+						</div>
+					{{ else }}
+						<div class="no-parameters">
+							<p>This request has no parameters.</p>
+						</div>
+					{{ end }}
+
+					<h4>Response</h4>
+					<div class="response">
+						{{ $responses := (index $route "response") }}
+						{{ if $responses }}
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							{{ $num_responses := len $responses }}
+							{{ range $index, $response := $responses }}
+								{{ $.Page.Scratch.Set "cls" "" }}
+								{{ if (or (eq $response.type "object") (and (eq $response.type "array") (eq $response.arrtype "object"))) }}
+									{{ $.Page.Scratch.Set "cls" "node" }}
+								{{ else }}
+									{{ $.Page.Scratch.Set "cls" "leaf" }}
+								{{ end }}
+								{{ if ( eq $index 0 ) }}
+									{{ $.Page.Scratch.Set "cls" (printf "%v %s" ($.Page.Scratch.Get "cls") "first") }}
+								{{ end }}
+								{{ if eq (add $index 1) $num_responses }}
+									{{ $.Page.Scratch.Set "cls" (printf "%v %s" ($.Page.Scratch.Get "cls") "last") }}
+								{{ end }}
+								{{ $class := $.Page.Scratch.Get "cls" }}
+								{{ if ( eq $response.type "object" ) }}
+									{{ $object := (index $.Site.Data.rest.object $response.model ) }}
+									{{ $dict := ( dict "site" $.Site "scratch" $.Page.Scratch "object" $object "modelpath" "" "level" 1 "class" $class "origin" "rm" ) }}
+									{{ partial "restful-object" $dict }}
+								{{ else if (eq $response.type "array") }}
+									{{ $dict := ( dict "site" $.Site "scratch" $.Page.Scratch "array" $response "modelpath" "" "level" 1 "class" $class "origin" "rm" ) }}
+									{{ partial "restful-array" $dict }}
+								{{ else }}
+									{{ $dict := ( dict "scratch" $.Page.Scratch "field" $response "modelpath" "" "level" 1 "class" $class "origin" "rm" ) }}
+									{{ partial "restful-object-field" $dict }}
+								{{ end }}
+							{{ end }}
+							</div>
+						</div>
+						{{ else }}
+							<div class="no-response">
+								<p>This request has no returned data.</p>
+							</div>
+						{{ end }}
+					</div>
+				</div>
+			</div>
+			{{ end }}
+
+			{{ if $resource.references }}
+				<h2>MODELS</h2>
+				{{ range $object_name := $resource.references }}
+					<h3>{{ $object_name }}</h3>
+					{{ partial "restful-object-open" (dict "Name" $object_name) }}
+					{{ $object := (index $.Site.Data.rest.object $object_name ) }}
+					{{ $dict := ( dict "site" $.Site "scratch" $.Page.Scratch "object" $object "level" 1 "class" "node" "origin" "rm" ) }}
+					{{ partial "restful-object" $dict }}
+					{{ partial "restful-object-close" (dict "Name" $object_name) }}
+				{{ end }}
+			{{ end }}
+
+		</div>
+	{{ end }}
+
+{{ partial "commonfoot" . }}

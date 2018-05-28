@@ -1,0 +1,35 @@
++++
+
+Title = "OrderItem"
+layout = "restmodel"
+resourcename = "orderitem"
+breadcrumbs = true
+
++++
+
+<p>
+	The OrderItem model represents a product that is an item on
+	an order for your shop. For each product that is part of an
+	order, there will be an order item. In other words, order items
+	<em>connect</em> products to orders. Furthermore, an order item
+	also defines the quantity of the product being ordered, as well
+	as the actual price the product is being sold for on that order.
+</p>
+<p>
+	Using OrderItems can be a little confusing at first. You need to
+	understand that OrderItems attached to an Order that you have
+	retrieved from the API are <em>complete</em> objects and have
+	all of their fields setup properly, including a complete Product
+	object. On the other hand, when you are creating a new order,
+	or updating an existing order, the OrderItem does not need a
+	complete Product object to function properly - it only needs
+	the order item's id for updating the price or quantity, and it
+	only needs a Product object with an id when creating a new
+	order item. Please see the example code provided for more details.
+</p>
+<p>
+	<strong>NOTE</strong> You will note that there is no "OrderItem Create"
+	route. Currently, if you wish to add an order item to an existing order,
+	you must use the "Order Update" route, passing only the new order item
+	as a parameter.
+</p>

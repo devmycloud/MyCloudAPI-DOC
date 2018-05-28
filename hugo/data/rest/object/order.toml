@@ -1,0 +1,107 @@
+name="order"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="The database key."
+[[fields]]
+	name="mc_number"
+	type="string"
+	example="MC180408932"
+	description="The unique MyCloud identifier."
+[[fields]]
+	name="customer"
+	type="object"
+	model="customer"
+	description="The customer attached to this order, or empty."
+[[fields]]
+	name="delivery_mode"
+	type="object"
+	model="deliverymode"
+	description="The delivery mode for this order."
+[[fields]]
+	name="billing_title"
+	type="string"
+	example="Order #BD-0023"
+	description="The billing title of this order."
+[[fields]]
+	name="customer_ref"
+	type="string"
+	example="CREF-20180304-A001"
+	description="The customer assigned reference for this order."
+[[fields]]
+	name="order_number"
+	type="string"
+	example="ORD-004564014"
+	description="The customer assigned order number of this order."
+[[fields]]
+	name="create_date"
+	type="Date"
+	example="2017-12-31"
+	description="The date the order was created in the format of YYYY-mm-dd."
+[[fields]]
+	name="delivery_date"
+	type="Date"
+	example="2017-12-31"
+	description="The date the order was delivered in the format of YYYY-mm-dd."
+[[fields]]
+	name="name"
+	type="string"
+	example="คุณ พวริด"
+	description="The name of the order recipient."
+[[fields]]
+	name="phone_number"
+	type="string"
+	example="0899969094"
+	description="The phone number of the order recipient."
+[[fields]]
+	name="email"
+	type="string"
+	example="customer@domain.com"
+	description="The email address of the order recipient."
+[[fields]]
+	name="address"
+	type="string"
+	example="32/1 สุขุมวิท 62, กรุงเทพฯ"
+	description="The physical address of the order recipient."
+[[fields]]
+	name="postcode"
+	type="string"
+	example="10260"
+	description="The postcode of the order recipient."
+[[fields]]
+	name="note"
+	type="string"
+	example="This is a special order."
+	description="A text note provided for this order."
+[[fields]]
+	name="total_price"
+	type="integer"
+	example="899"
+	description="The total price for the order in THB."
+[[fields]]
+	name="payment_amount"
+	type="integer"
+	example="899"
+	description="The amount the customer claims to have paid in THB."
+[[fields]]
+	name="payment_date"
+	type="Date"
+	example="2017-12-31"
+	description="The date the customer claims to have made payment in the format of YYYY-mm-dd."
+[[fields]]
+	name="payment_time"
+	type="Time"
+	example="15:32"
+	description="The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)"
+[[fields]]
+	name="weight"
+	type="float"
+	example="0.453"
+	description="The total weight of the order being shipped in Kg."
+[[fields]]
+	name="urgent"
+	type="boolean"
+	example="false"
+	description="If true, the order is considered urgent."

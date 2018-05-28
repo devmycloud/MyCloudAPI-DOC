@@ -1,0 +1,33 @@
+title = "Token"
+readonly = true
+references = []
+
+[[routes]]
+	id="get_token"
+	name="Get A Fresh JWT Authentication Token"
+	method="GET"
+	url="/gettoken"
+	title="Get a fresh JWT token."
+	description="""Get a fresh JWT authentication token that can \
+		be used for all other API RESTful calls. \
+	"""
+
+	[[routes.parameters]]
+		name="apikey"
+		type="string"
+		required=true
+		example="d76a13d4113c4323b74e8d7bf14c9a5e"
+		description="The apiKey that has been assigned to your account."
+
+	[[routes.parameters]]
+		name="secretKey"
+		type="string"
+		required=true
+		example="87bddb3998b44272ab254c6447ed7f2452a1e581241944ea"
+		description="The secretKey that has been assigned to your account."
+
+	[[routes.response]]
+		name="token"
+		type="string"
+		example="87bddb3998b44272ab254c6447ed7f2452a1e581241944ea"
+		description="The JWT token to use in RESTful API requests."

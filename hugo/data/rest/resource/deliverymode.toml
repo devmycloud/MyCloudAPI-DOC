@@ -1,0 +1,44 @@
+title = "Delivery Mode"
+readonly = true
+references = []
+
+[[routes]]
+	id="get_all_deliverymodes"
+	name="Get All Delivery Modes"
+	method="GET"
+	url="/deliverymodes"
+	title="Get all delivery modes."
+	description="""Get all delivery modes associated with your account. \
+	"""
+
+	[[routes.response]]
+		name="deliverymodes"
+		type="array"
+		arrtype="object"
+		model="deliverymode"
+		example=""
+		description="The delivery modes associated with your account."
+
+
+[[routes]]
+	id="get_a_deliverymode"
+	name="Get Delivery Mode"
+	method="GET"
+	url="/deliverymodes/{id}"
+	title="Get delivery mode."
+	description="""Get a specific delivery mode by id. \
+	"""
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="1984"
+		description="The DB key for the delivery mode."
+
+	[[routes.response]]
+		name="deliverymode"
+		type="object"
+		model="deliverymode"
+		example=""
+		description="The delivery mode identified by {id}."

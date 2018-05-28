@@ -1,0 +1,53 @@
+title = "Shop"
+readonly = true
+references = [ "shop" ]
+
+[[routes]]
+	id="get_all_shops"
+	name="Get All Shops"
+	method="GET"
+	url="/shops"
+	title="Get all shops."
+	description="""Get all Shops associated with your account. \
+		Currently MyCloud allows only one Shop per client account, \
+		so the array returned will always contain at most one Shop. \
+	"""
+
+	[[routes.response]]
+		name="shop"
+		type="array"
+		arrtype="object"
+		model="shop"
+		example=""
+		description="""The list of shops attached to your account. \
+			Note that the result array will always contain only one shop. \
+			"""
+
+[[routes]]
+	id="get_shop"
+	name="Get Shop"
+	method="GET"
+	url="/shops/{id}"
+	title="Get a shop."
+	description="Get a shop by it's ID."
+
+	[[routes.parameters]]
+		name="shop_id"
+		type="mixed"
+		required=true
+		example="JO001"
+		description="""The shop identity. This method allows you to identify the shop \
+			with one of three different values:
+			<ul>
+				<li>ID - the database ID</li>
+				<li>Code - the MyCloud unique code</li>
+				<li>Email - the shop's contact email address</li>
+			</ul>
+		"""
+
+	[[routes.response]]
+		name="shop"
+		type="object"
+		model="shop"
+		example=""
+		description="The Shop object identified by the id."

@@ -1,0 +1,381 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API PHP SDK</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../../img/favicon-16x16.png">
+	<link href="../../../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-github home-page">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../../../"><img src="../../../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../../../readme/">README</a>
+				<a href="../../../../apidocs/">Documentation</a>
+				<a href="../../../../downloads/mycloud-api-sdk-php-0.7.6.zip">Binary Distribution</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content">
+	<div class="bread-crumb">
+	<a href="../../../../">Home</a
+		>&nbsp;&gt; <a href="../index.html">RESTful&nbsp;API&nbsp;Documentation</a
+		>&nbsp;&gt; Shop
+</div>
+
+<div class="restful-content">
+	<h1>Shop Model [read-only]</h1>
+	<p>
+		The Shop model represents your shop. Note that this model
+		is read-only. You can retrieve
+		your Shop's model to access the information assigned to your
+		shop, but the API does not provide any means for updating the
+		Shop, or to create a new one.
+	</p>
+
+	<h2>RESTful Calls</h2>
+
+	<h3>Get All Shops</h3>
+	<p class="restful-description">
+	Get all Shops associated with your account.
+	Currently MyCloud allows only one Shop per client account,
+	so the array returned will always contain at most one Shop.
+	</p>
+
+	<div class="restful-call">
+		<div class="restful-routes">
+			{{ $data := .Site.Data.rest.resource.shop }}
+			{{ range $element := $data.routes }}
+				<h4>{{ $element.name }}</h4>
+
+				<p class="description">{{ $element.description }}</p>
+
+				<p class="restful-route"><span class="method">{{ $element.method }}</span
+					><span class="uri">{{ $element.url }}</span></p>
+				{{ $params := (index $element params) }}
+					<p>PARAM: {{ $params.name }}</p>
+				{{ end }}
+			{{ end }}
+		</div>
+
+		<div class="response">
+			<div class="mc-table rest-table">
+				<div class="mc-table-thead">
+					<div class="mc-table-tr">
+						<div class="mc-table-th rest-data-col">
+							Result
+						</div>
+						<div class="mc-table-th rest-type-col">
+							Type
+						</div>
+						<div class="mc-table-th rest-example-col">
+							Example
+						</div>
+						<div class="mc-table-th rest-description-col">
+							Description
+						</div>
+					</div>
+				</div>
+				<div class="mc-table-tbody">
+					<div class="mc-table-tr">
+						<div class="mc-table-td rest-data-cell">
+							<div class="rest-data-wrap rest-data-level level-top level-1">
+							<span class="ctl"></span>
+							<span>shops</span>
+							</div>
+						</div>
+						<div class="mc-table-td">Object[]</div>
+						<div class="mc-table-td">&nbsp;</div>
+						<div class="mc-table-td">
+							The array of shops requested.
+						</div>
+					</div>
+					<div class="mc-table-tr">
+						<div class="mc-table-td rest-data-cell">
+							<div class="rest-data-wrap rest-data-level level-top level-2">
+							<span class="ctl"></span>
+							<a href="#shop"><span>shop</span></a>
+							</div>
+						</div>
+						<div class="mc-table-td">Object</div>
+						<div class="mc-table-td">&nbsp;</div>
+						<div class="mc-table-td">A shop object.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="restful-call">
+		<h3>Get Shop</h3>
+		<p class="restful-description">
+		Get a shop specified by it's id, or code.
+		</p>
+		
+		<p class="restful-route">
+			<span class="method">GET</span
+			><span class="uri">/shops/{id}</span>
+		</p>
+
+		<div class="parameters">
+			<p>{id}</p>
+		</div>
+
+		<div class="response">
+			<div class="mc-table rest-table">
+				<div class="mc-table-thead">
+					<div class="mc-table-tr">
+						<div class="mc-table-th rest-data-col">
+							Result
+						</div>
+						<div class="mc-table-th rest-type-col">
+							Type
+						</div>
+						<div class="mc-table-th rest-example-col">
+							Example
+						</div>
+						<div class="mc-table-th rest-description-col">
+							Description
+						</div>
+					</div>
+				</div>
+				<div class="mc-table-tbody">
+					<div class="mc-table-tr">
+						<div class="mc-table-td rest-data-cell">
+							<div class="rest-data-wrap rest-data-level level-top level-1">
+							<span class="ctl"></span>
+							<a href="#shop"><span>shop</span></a>
+							</div>
+						</div>
+						<div class="mc-table-td">Object</div>
+						<div class="mc-table-td">&nbsp;</div>
+						<div class="mc-table-td">A shop object.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="restful-object">
+		<h2>Objects</h2>
+
+		<div class="restful-object">
+	<a name="shop"></a>
+	<h3>Shop Object (shop)</h3>
+
+	<div class="mc-table rest-table">
+		<div class="mc-table-thead">
+			<div class="mc-table-tr">
+				<div class="mc-table-th rest-data-col">
+					Result
+				</div>
+				<div class="mc-table-th rest-type-col">
+					Type
+				</div>
+				<div class="mc-table-th rest-example-col">
+					Example
+				</div>
+				<div class="mc-table-th rest-description-col">
+					Description
+				</div>
+			</div>
+		</div>
+		<div class="mc-table-tbody">
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-top level-1">
+					<span class="ctl"></span>
+					<span>shop</span>
+					</div>
+				</div>
+				<div class="mc-table-td">Object</div>
+				<div class="mc-table-td">&nbsp;</div>
+				<div class="mc-table-td">A shop object.</div>
+			</div>
+			
+			
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>id</span>
+					</div>
+				</div>
+				<div class="mc-table-td">integer</div>
+				<div class="mc-table-td">342</div>
+				<div class="mc-table-td">
+					This is the shop&#39;s database key.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>name</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">My Shop</div>
+				<div class="mc-table-td">
+					This is the shop&#39;s name.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>code</span>
+					</div>
+				</div>
+				<div class="mc-table-td">integer</div>
+				<div class="mc-table-td">MA002</div>
+				<div class="mc-table-td">
+					This is the shop&#39;s MyCloud internal identity code.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>address</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+				<div class="mc-table-td">
+					This is the shop&#39;s physical address.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>postcode</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">10260</div>
+				<div class="mc-table-td">
+					This is the postcode for the shop&#39;s physical address.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>contact_name</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">คุณ พวริด</div>
+				<div class="mc-table-td">
+					This is the name of the contact person for the shop.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>phone_number</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">0809969094</div>
+				<div class="mc-table-td">
+					This is the phone number of the contact person for the shop.
+				</div>
+			</div>
+			
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>email</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">contact@mycloudfulfillmnt.com</div>
+				<div class="mc-table-td">
+					This is the email address of the contact person for the shop.
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+	</div>
+</div>
+
+
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

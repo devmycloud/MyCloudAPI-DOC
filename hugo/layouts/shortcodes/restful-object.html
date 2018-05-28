@@ -1,0 +1,52 @@
+<div class="restful-object">
+	<a name="shop"></a>
+	<h3>Shop Object ({{.Get 0}})</h3>
+
+	<div class="mc-table rest-table">
+		<div class="mc-table-thead">
+			<div class="mc-table-tr">
+				<div class="mc-table-th rest-data-col">
+					Result
+				</div>
+				<div class="mc-table-th rest-type-col">
+					Type
+				</div>
+				<div class="mc-table-th rest-example-col">
+					Example
+				</div>
+				<div class="mc-table-th rest-description-col">
+					Description
+				</div>
+			</div>
+		</div>
+		<div class="mc-table-tbody">
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-top level-1">
+					<span class="ctl"></span>
+					<span>shop</span>
+					</div>
+				</div>
+				<div class="mc-table-td">Object</div>
+				<div class="mc-table-td">&nbsp;</div>
+				<div class="mc-table-td">A shop object.</div>
+			</div>
+			{{ $object := .Get 0 }}
+			{{ $data := (index .Page.Site.Data.rest.object $object) }}
+			{{ range $element := $data.fields }}
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>{{ $element.name }}</span>
+					</div>
+				</div>
+				<div class="mc-table-td">{{ $element.type }}</div>
+				<div class="mc-table-td">{{ $element.example }}</div>
+				<div class="mc-table-td">
+					{{ $element.description }}
+				</div>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</div>

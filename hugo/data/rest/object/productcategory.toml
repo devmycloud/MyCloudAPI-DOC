@@ -1,0 +1,17 @@
+name="productcategory"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="This is the product category's database key."
+[[fields]]
+	name="code"
+	type="string"
+	example="CAT0304"
+	description="This is a MyCloud assigned code for this product category. This code cannot be changed."
+[[fields]]
+	name="name"
+	type="string"
+	example="T-Shirts"
+	description="The name of this product category as assigned by the shop."

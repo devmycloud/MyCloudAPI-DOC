@@ -1,0 +1,157 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../img/favicon-16x16.png">
+	<link href="../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api ">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../"><img src="../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../readme/">README</a>
+				<a href="../../apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content " data-source="layouts-default-single">
+	
+	<div class="bread-crumb">
+		<a href="../../">Home</a>
+		
+			&nbsp;&gt; <a href="../../apidocs/">API&nbsp;Documentation</a>
+		
+			&nbsp;&gt; Overview&nbsp;API
+		
+	</div>
+	
+	<h1>API Overview</h1>
+<p>
+	The MyCloud API is a RESTful API. It is built on top of the
+	HTTP protocol to implement communications with the API server.
+</p>
+
+<h2>API Requests</h2>
+<p>
+	Client API requests send their data to the API server
+	using the multipart/form-data specification defined by
+	<a href="https://tools.ietf.org/html/rfc7578">RFC7578</a>,
+	which is the same standard that web browsers use to submit
+	form data when you submit an HTML &lt;FORM&gt; using the
+	'multipart/form-data' enctype. This standard
+	was chosen because it is supported by virtually every modern
+	programming language, and has many online tools for simulating
+	requests with the data format.
+</p>
+
+<h2>API Responses</h2>
+<p>
+	The API server responses send their data to the client
+	using the JSON (JavaScript Object Notation) standard defined
+	by <a href="https://tools.ietf.org/html/rfc7159">RFC7159</a>.
+	This standard was chosen because it is inherently suitable
+	to represent object structures, is supported by virtually
+	every modern programming language, and it easily read in
+	it's native form by the developer.
+</p>
+
+<h2>API Data Encoding</h2>
+<p>
+	The MyCloud database, and thus the API, utilizes UTF8
+	encoding for all data that is not ASCII data.
+</p>
+<p>
+	For all data used with the MyCloud API,
+	UTF8 encoding should be used for any data that
+	is not contained within the ASCII dataset. In other words, if
+	your data contains Thai script, that data should be encoded
+	with UTF8. In general, you should not need to do anything
+	special to make this work. If you are editing code that
+	contains Thai script, your editor most likely uses UTF8 to
+	store the program file. Most of the tools that you are using
+	to access, manipulate, and display data use UTF8.
+</p>
+
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

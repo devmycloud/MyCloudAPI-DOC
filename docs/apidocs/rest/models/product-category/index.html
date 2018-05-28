@@ -1,0 +1,806 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../../img/favicon-16x16.png">
+	<link href="../../../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api ">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../../../"><img src="../../../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../../../readme/">README</a>
+				<a href="../../../../apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content restful-content" data-source="layouts-default-restmodel">
+
+	
+		
+		
+		<div class="bread-crumb">
+			<a href="../../../../">Home</a
+				>&nbsp;&gt; <a href="../../../../apidocs/">API&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/">RESTful&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/models/">Models</a
+				>&nbsp;&gt; ProductCategory
+		</div>
+		
+
+		<h1>ProductCategory Model
+			
+				<span class="read-only">[read-only]</span>
+			
+		</h1>
+
+		<p>
+	The ProductCategory model represents a product category used
+	for organizing your products.
+</p>
+
+
+		<div class="restful-content">
+			<h2 id="restful_calls">RESTful Calls</h2>
+			<ul class="restful-call-list">
+			
+				<li><a href="#get_all_productcategories">Get All ProductCategories</a></li>
+			
+				<li><a href="#get_productcategory">Get ProductCategory</a></li>
+			
+				<li><a href="#create_productcategory">Create ProductCategory</a></li>
+			
+			</ul>
+
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_all_productcategories">Get All ProductCategories
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/productcategories</span></p>
+
+					<p class="description">Get all product categories associated with your account. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="no-parameters">
+							<p>This request has no parameters.</p>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+<div class="mc-table-tr" date-type="node" data-path="productcategories[]" data-origin="rof">
+	
+	<div data-level="1" class="mc-table-td rest-field level-1">
+	
+		<div class="rest-field-inner node">
+		
+			<span class="ctl"></span>
+		
+		<span class="name">productcategories</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			
+				productcategory[]
+			
+		
+	</div>
+	<div class="mc-table-td rest-example"></div>
+	<div class="mc-table-td rest-description">
+		The list of product categories attached to your account. 
+	</div>
+</div>
+
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" data-type="node" data-path="productcategories[].productcategory" data-origin="robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>productcategory</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A productcategory object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategories[].productcategory.id" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product category&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategories[].productcategory.code" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CAT0304</div>
+	<div class="mc-table-td rest-description">
+		This is a MyCloud assigned code for this product category. This code cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategories[].productcategory.name" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">T-Shirts</div>
+	<div class="mc-table-td rest-description">
+		The name of this product category as assigned by the shop.
+	</div>
+</div>
+
+	
+
+
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_productcategory">Get ProductCategory
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/productcategories/{category_id}</span></p>
+
+					<p class="description">Get a product category by it&#39;s ID.</p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">category_id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">1287</div>
+									<div class="mc-table-td">
+										The database ID that identifies this product category. 
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="productcategory" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>productcategory</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A productcategory object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategory.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product category&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategory.code" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CAT0304</div>
+	<div class="mc-table-td rest-description">
+		This is a MyCloud assigned code for this product category. This code cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="productcategory.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">T-Shirts</div>
+	<div class="mc-table-td rest-description">
+		The name of this product category as assigned by the shop.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="create_productcategory">Create ProductCategory
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">POST</span
+						><span class="uri">/productcategories</span></p>
+
+					<p class="description">Create a new product category with the specified attributes. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">name</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">T-Shirts</div>
+									<div class="mc-table-td">
+										The name of this product category.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+							<div class="no-response">
+								<p>This request has no returned data.</p>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			
+
+			
+
+		</div>
+	
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

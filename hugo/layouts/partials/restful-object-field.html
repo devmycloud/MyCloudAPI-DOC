@@ -1,0 +1,50 @@
+{{ .scratch.Set "origin" "rof" }}
+{{ if .origin }}
+	{{ .scratch.Set "origin" (printf "%v-rof" .origin) }}
+{{ end }}
+{{ $origin := .scratch.Get "origin" }}
+
+{{ $.scratch.Set "datatype" "leaf" }}
+{{ if (or (eq .field.type "object") (and (eq .field.type "array") (eq .field.arrtype "object"))) }}
+	{{ $.scratch.Set "datatype" "node" }}
+{{ end }}
+
+{{ $.scratch.Set "modelpath" $.field.name }}
+{{ if $.modelpath }}
+	{{ $.scratch.Set "modelpath" (printf "%v.%v" $.modelpath $.field.name) }}
+{{ end }}
+{{ if (eq .field.type "array") }}
+	{{ $.scratch.Set "modelpath" (printf "%v%v" ($.scratch.Get "modelpath") "[]") }}
+{{ end }}
+
+{{ $type := $.scratch.Get "datatype" }}
+{{ $path := $.scratch.Get "modelpath" }}
+<div class="mc-table-tr" date-type="{{ $type }}" data-path="{{ $path }}" data-origin="{{ $origin }}">
+	{{ if (or (eq .field.type "object") (and (eq .field.type "array") (eq .field.arrtype "object")) ) }}
+	<div data-level="{{$.level}}" class="mc-table-td rest-field level-{{$.level}}">
+	{{ else }}
+	<div class="mc-table-td rest-field level-{{$.level}}">
+	{{ end }}
+		<div class="rest-field-inner {{ $.class }}">
+		{{ if (or (eq .field.type "object") (and (eq .field.type "array") (eq .field.arrtype "object"))) }}
+			<span class="ctl"></span>
+		{{ end }}
+		<span class="name">{{ .field.name }}</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		{{ if (eq .field.type "array") }}
+			{{ if (eq .field.arrtype "object") }}
+				{{ .field.model }}[]
+			{{ else }}
+				{{ .field.arrtype }}[]
+			{{ end }}
+		{{ else }}
+			{{ .field.type }}
+		{{ end }}
+	</div>
+	<div class="mc-table-td rest-example">{{ .field.example }}</div>
+	<div class="mc-table-td rest-description">
+		{{ .field.description }}
+	</div>
+</div>

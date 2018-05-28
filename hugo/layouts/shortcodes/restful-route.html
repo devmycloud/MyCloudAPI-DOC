@@ -1,0 +1,161 @@
+<div class="restful-object">
+	<a name="shop"></a>
+	<h3>Shop Object ({{.Get 0}})</h3>
+
+	<div class="mc-table rest-table">
+		<div class="mc-table-thead">
+			<div class="mc-table-tr">
+				<div class="mc-table-th rest-data-col">
+					Result
+				</div>
+				<div class="mc-table-th rest-type-col">
+					Type
+				</div>
+				<div class="mc-table-th rest-example-col">
+					Example
+				</div>
+				<div class="mc-table-th rest-description-col">
+					Description
+				</div>
+			</div>
+		</div>
+		<div class="mc-table-tbody">
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-top level-1">
+					<span class="ctl"></span>
+					<span>shop</span>
+					</div>
+				</div>
+				<div class="mc-table-td">Object</div>
+				<div class="mc-table-td">&nbsp;</div>
+				<div class="mc-table-td">A shop object.</div>
+			</div>
+			{{ $object := .Get 0 }}
+			{{ $data := (index .Page.Site.Data.rest.object $object) }}
+			{{ range $element := $data.fields }}
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>{{ $element.name }}</span>
+					</div>
+				</div>
+				<div class="mc-table-td">{{ $element.type }}</div>
+				<div class="mc-table-td">{{ $element.example }}</div>
+				<div class="mc-table-td">
+					{{ $element.description }}
+				</div>
+			</div>
+			{{ end }}
+<!--
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-top level-1">
+					<span class="ctl"></span>
+					<span>shop</span>
+					</div>
+				</div>
+				<div class="mc-table-td">Object</div>
+				<div class="mc-table-td">&nbsp;</div>
+				<div class="mc-table-td">A shop object.</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>id</span>
+					</div>
+				</div>
+				<div class="mc-table-td">integer</div>
+				<div class="mc-table-td">'My Shop'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>code</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'MA002'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>name</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'My Shop'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>address</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'32/1 สุขุมวิท 62, กรุงเทพฯ'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>postcode</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'10260'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>contact_name</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'คุณ พวริด'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>phone_number</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'0809969094'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+			<div class="mc-table-tr">
+				<div class="mc-table-td rest-data-cell">
+					<div class="rest-data-wrap rest-data-level level-2">
+					<span>email</span>
+					</div>
+				</div>
+				<div class="mc-table-td">string</div>
+				<div class="mc-table-td">'contact@mycloudfulfillent.com'</div>
+				<div class="mc-table-td">
+					The name of the shop.
+				</div>
+			</div>
+-->
+		</div>
+	</div>
+</div>

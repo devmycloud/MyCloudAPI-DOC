@@ -1,0 +1,42 @@
+name="shop"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="This is the shop's database key."
+[[fields]]
+	name="name"
+	type="string"
+	example="My Shop"
+	description="This is the shop's name."
+[[fields]]
+	name="code"
+	type="integer"
+	example="MA002"
+	description="This is the shop's MyCloud internal identity code."
+[[fields]]
+	name="address"
+	type="string"
+	example='32/1 สุขุมวิท 62, กรุงเทพฯ'
+	description="This is the shop's physical address."
+[[fields]]
+	name="postcode"
+	type="string"
+	example='10260'
+	description="This is the postcode for the shop's physical address."
+[[fields]]
+	name="contact_name"
+	type="string"
+	example='คุณ พวริด'
+	description="This is the name of the contact person for the shop."
+[[fields]]
+	name="phone_number"
+	type="string"
+	example='0809969094'
+	description="This is the phone number of the contact person for the shop."
+[[fields]]
+	name="email"
+	type="string"
+	example='contact@mycloudfulfillmnt.com'
+	description="This is the email address of the contact person for the shop."

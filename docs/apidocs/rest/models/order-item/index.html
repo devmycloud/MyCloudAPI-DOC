@@ -1,0 +1,1050 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../../img/favicon-16x16.png">
+	<link href="../../../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api ">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../../../"><img src="../../../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../../../readme/">README</a>
+				<a href="../../../../apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content restful-content" data-source="layouts-default-restmodel">
+
+	
+		
+		
+		<div class="bread-crumb">
+			<a href="../../../../">Home</a
+				>&nbsp;&gt; <a href="../../../../apidocs/">API&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/">RESTful&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/models/">Models</a
+				>&nbsp;&gt; OrderItem
+		</div>
+		
+
+		<h1>Order Item Model
+			
+		</h1>
+
+		<p>
+	The OrderItem model represents a product that is an item on
+	an order for your shop. For each product that is part of an
+	order, there will be an order item. In other words, order items
+	<em>connect</em> products to orders. Furthermore, an order item
+	also defines the quantity of the product being ordered, as well
+	as the actual price the product is being sold for on that order.
+</p>
+<p>
+	Using OrderItems can be a little confusing at first. You need to
+	understand that OrderItems attached to an Order that you have
+	retrieved from the API are <em>complete</em> objects and have
+	all of their fields setup properly, including a complete Product
+	object. On the other hand, when you are creating a new order,
+	or updating an existing order, the OrderItem does not need a
+	complete Product object to function properly - it only needs
+	the order item's id for updating the price or quantity, and it
+	only needs a Product object with an id when creating a new
+	order item. Please see the example code provided for more details.
+</p>
+<p>
+	<strong>NOTE</strong> You will note that there is no "OrderItem Create"
+	route. Currently, if you wish to add an order item to an existing order,
+	you must use the "Order Update" route, passing only the new order item
+	as a parameter.
+</p>
+
+
+		<div class="restful-content">
+			<h2 id="restful_calls">RESTful Calls</h2>
+			<ul class="restful-call-list">
+			
+				<li><a href="#get_order_item">Get Order Item</a></li>
+			
+				<li><a href="#update_order_item">Update Order Item</a></li>
+			
+				<li><a href="#delete_order_item">Delete Order Item</a></li>
+			
+			</ul>
+
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_order_item">Get Order Item
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/orderitems/{id}</span></p>
+
+					<p class="description">Get a specific order item by id. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">1984</div>
+									<div class="mc-table-td">
+										The DB key for the delivery mode.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="orderitem" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>orderitem</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A orderitem object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">17839</div>
+	<div class="mc-table-td rest-description">
+		This is the order item&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">299</div>
+	<div class="mc-table-td rest-description">
+		The price of the order item. This is used to set the specific price of this item for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.quantity" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">quantity</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">1</div>
+	<div class="mc-table-td rest-description">
+		The number of order items purchased in this order.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="update_order_item">Update Order Item
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">PATCH</span
+						><span class="uri">/orderitems/{id}</span></p>
+
+					<p class="description">Get a specific delivery mode by id. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">196179</div>
+									<div class="mc-table-td">
+										The DB key for the order item.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">price</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">199</div>
+									<div class="mc-table-td">
+										The price for this order item.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">quantity</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">2</div>
+									<div class="mc-table-td">
+										The number of this order item purchased in this order.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="orderitem" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>orderitem</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A orderitem object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">17839</div>
+	<div class="mc-table-td rest-description">
+		This is the order item&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">299</div>
+	<div class="mc-table-td rest-description">
+		The price of the order item. This is used to set the specific price of this item for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.quantity" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">quantity</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">1</div>
+	<div class="mc-table-td rest-description">
+		The number of order items purchased in this order.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="delete_order_item">Delete Order Item
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">DELETE</span
+						><span class="uri">/order_item/{id}</span></p>
+
+					<p class="description">Delete the order item identified by id from it&#39;s order. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">196179</div>
+									<div class="mc-table-td">
+										The DB key for the order item.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="orderitem" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>orderitem</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A orderitem object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">17839</div>
+	<div class="mc-table-td rest-description">
+		This is the order item&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">299</div>
+	<div class="mc-table-td rest-description">
+		The price of the order item. This is used to set the specific price of this item for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitem.quantity" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">quantity</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">1</div>
+	<div class="mc-table-td rest-description">
+		The number of order items purchased in this order.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+
+			
+
+		</div>
+	
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

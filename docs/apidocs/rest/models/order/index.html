@@ -1,0 +1,9766 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../../img/favicon-16x16.png">
+	<link href="../../../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api ">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../../../"><img src="../../../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../../../readme/">README</a>
+				<a href="../../../../apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content restful-content" data-source="layouts-default-restmodel">
+
+	
+		
+		
+		<div class="bread-crumb">
+			<a href="../../../../">Home</a
+				>&nbsp;&gt; <a href="../../../../apidocs/">API&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/">RESTful&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/models/">Models</a
+				>&nbsp;&gt; Order
+		</div>
+		
+
+		<h1>Order Model
+			
+		</h1>
+
+		<p>
+	The Order model represents an order placed with your shop. Orders
+	consist of OrderItems, which are the Products that are attached
+	to the order. An order can have a Customer attached to it, but
+	this is not required. And order must have a DeliveryMode attached
+	to it to select the method of shipment. The payment attributes
+	are provided for the customer to indicate to the shop when and how
+	payment was made so the shop can verify payment. If payment was
+	received through an online payment system, the shop may store
+	that information in the order if they want.
+</p>
+
+
+		<div class="restful-content">
+			<h2 id="restful_calls">RESTful Calls</h2>
+			<ul class="restful-call-list">
+			
+				<li><a href="#get_all_orders">Get All Orders</a></li>
+			
+				<li><a href="#get_order">Get Order</a></li>
+			
+				<li><a href="#get_order_items">Get Order Items</a></li>
+			
+				<li><a href="#create_order">Create Order</a></li>
+			
+				<li><a href="#update_order">Update Order</a></li>
+			
+				<li><a href="#delete_order">Delete Order</a></li>
+			
+			</ul>
+
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_all_orders">Get All Orders
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/orders</span></p>
+
+					<p class="description">Get all Orders associated with your account. Note, your account may contain many orders, and retrieving all of them in one call puts an excessive load on the server, as well as requiring a long time to reply. This will typically result in your request timing out. Thus, is it recommended that you use the &#39;offset&#39; and &#39;count&#39; parameters to &lt;em&gt;paginate&lt;/em&gt; getting all orders. Setup a loop and start with offset 0, and a count that is reasonable (e.g. 20), then increment offset by count for each loop iteration. This request will return only &lt;em&gt;undeleted&lt;/em&gt; orders. If you want to rerieve deleted orders as well, setup the &lt;em&gt;deleted&lt;/em&gt; parameter. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="no-parameters">
+							<p>This request has no parameters.</p>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+<div class="mc-table-tr" date-type="node" data-path="orders[]" data-origin="rof">
+	
+	<div data-level="1" class="mc-table-td rest-field level-1">
+	
+		<div class="rest-field-inner node">
+		
+			<span class="ctl"></span>
+		
+		<span class="name">orders</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			
+				order[]
+			
+		
+	</div>
+	<div class="mc-table-td rest-example"></div>
+	<div class="mc-table-td rest-description">
+		The list of Orders requested according to the pagination and deleted parameters. 
+	</div>
+</div>
+
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" data-type="node" data-path="orders[].order" data-origin="robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>order</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A order object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.id" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.mc_number" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">mc_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MC180408932</div>
+	<div class="mc-table-td rest-description">
+		The unique MyCloud identifier.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="orders[].order.customer" data-origin="robj-rofs-robj">
+	<div class="mc-table-td rest-field level-3">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>customer</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A customer object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.id" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.code" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CU0034</div>
+	<div class="mc-table-td rest-description">
+		The code assigned to the customer by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.name" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.phone_number" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.email" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.social_id" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">social_id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MyLineId</div>
+	<div class="mc-table-td rest-description">
+		This is a social media id for the customer (e.g. Facebook ID or Line ID
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.address" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.postcode" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer.note" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this customer.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="orders[].order.deliverymode" data-origin="robj-rofs-robj">
+	<div class="mc-table-td rest-field level-3">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>deliverymode</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A deliverymode object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.deliverymode.id" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.deliverymode.code" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">MA002</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s MyCloud internal identity code.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.deliverymode.name" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Kerry Express</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s name.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.deliverymode.contact" data-origin="robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-4">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">contact</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">contact@kerry-express.com</div>
+	<div class="mc-table-td rest-description">
+		Contact url or information for delivery mode provider.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.billing_title" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">billing_title</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Order #BD-0023</div>
+	<div class="mc-table-td rest-description">
+		The billing title of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.customer_ref" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">customer_ref</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CREF-20180304-A001</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned reference for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.order_number" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">order_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">ORD-004564014</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned order number of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.create_date" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">create_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was created in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.delivery_date" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">delivery_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was delivered in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.name" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.phone_number" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.email" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.address" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.postcode" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.note" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.total_price" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">total_price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The total price for the order in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.payment_amount" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_amount</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The amount the customer claims to have paid in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.payment_date" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the customer claims to have made payment in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.payment_time" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_time</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Time
+		
+	</div>
+	<div class="mc-table-td rest-example">15:32</div>
+	<div class="mc-table-td rest-description">
+		The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.weight" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">weight</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			float
+		
+	</div>
+	<div class="mc-table-td rest-example">0.453</div>
+	<div class="mc-table-td rest-description">
+		The total weight of the order being shipped in Kg.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orders[].order.urgent" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">urgent</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			boolean
+		
+	</div>
+	<div class="mc-table-td rest-example">false</div>
+	<div class="mc-table-td rest-description">
+		If true, the order is considered urgent.
+	</div>
+</div>
+
+	
+
+
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_order">Get Order
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/orders/{id}</span></p>
+
+					<p class="description">Get an order by it&#39;s ID.</p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">197984</div>
+									<div class="mc-table-td">
+										The DB key for the order.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>order</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A order object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.mc_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">mc_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MC180408932</div>
+	<div class="mc-table-td rest-description">
+		The unique MyCloud identifier.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.customer" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>customer</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A customer object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CU0034</div>
+	<div class="mc-table-td rest-description">
+		The code assigned to the customer by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.phone_number" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.email" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.social_id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">social_id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MyLineId</div>
+	<div class="mc-table-td rest-description">
+		This is a social media id for the customer (e.g. Facebook ID or Line ID
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.address" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.postcode" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.note" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this customer.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.deliverymode" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>deliverymode</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A deliverymode object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">MA002</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s MyCloud internal identity code.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Kerry Express</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s name.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.contact" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">contact</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">contact@kerry-express.com</div>
+	<div class="mc-table-td rest-description">
+		Contact url or information for delivery mode provider.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.billing_title" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">billing_title</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Order #BD-0023</div>
+	<div class="mc-table-td rest-description">
+		The billing title of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer_ref" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">customer_ref</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CREF-20180304-A001</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned reference for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.order_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">order_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">ORD-004564014</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned order number of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.create_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">create_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was created in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.delivery_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">delivery_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was delivered in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.phone_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.email" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.address" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.postcode" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.note" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.total_price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">total_price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The total price for the order in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_amount" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_amount</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The amount the customer claims to have paid in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the customer claims to have made payment in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_time" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_time</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Time
+		
+	</div>
+	<div class="mc-table-td rest-example">15:32</div>
+	<div class="mc-table-td rest-description">
+		The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.weight" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">weight</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			float
+		
+	</div>
+	<div class="mc-table-td rest-example">0.453</div>
+	<div class="mc-table-td rest-description">
+		The total weight of the order being shipped in Kg.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.urgent" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">urgent</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			boolean
+		
+	</div>
+	<div class="mc-table-td rest-example">false</div>
+	<div class="mc-table-td rest-description">
+		If true, the order is considered urgent.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_order_items">Get Order Items
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/orders/{id}/orderitems</span></p>
+
+					<p class="description">Get all order items for an order specified by id. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">1984</div>
+									<div class="mc-table-td">
+										The DB key for the order to retrieve the order items for.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+<div class="mc-table-tr" date-type="node" data-path="orderitems[]" data-origin="rof">
+	
+	<div data-level="1" class="mc-table-td rest-field level-1">
+	
+		<div class="rest-field-inner node">
+		
+			<span class="ctl"></span>
+		
+		<span class="name">orderitems</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			
+				orderitem[]
+			
+		
+	</div>
+	<div class="mc-table-td rest-example"></div>
+	<div class="mc-table-td rest-description">
+		The order items attached to the order identified by {id}.
+	</div>
+</div>
+
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" data-type="node" data-path="orderitems[].orderitem" data-origin="robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>orderitem</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A orderitem object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitems[].orderitem.id" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">17839</div>
+	<div class="mc-table-td rest-description">
+		This is the order item&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitems[].orderitem.price" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">299</div>
+	<div class="mc-table-td rest-description">
+		The price of the order item. This is used to set the specific price of this item for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="orderitems[].orderitem.quantity" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">quantity</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">1</div>
+	<div class="mc-table-td rest-description">
+		The number of order items purchased in this order.
+	</div>
+</div>
+
+	
+
+
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="create_order">Create Order
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">POST</span
+						><span class="uri">/orders</span></p>
+
+					<p class="description">Create a new order with the specified order items, delivery mode, and possible customer. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">customer_id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">232</div>
+									<div class="mc-table-td">
+										The DB key for the customer to attach to this order, or 0.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">delivery_mode_id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">343</div>
+									<div class="mc-table-td">
+										The DB key for the delivery mode to be used to ship this order.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">order_items[]</div>
+									<div class="mc-table-td">array</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										The list of order items for this order. Each order item must be specified as an array of values, similar to HTML <form> parameters.
+		
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][product_id]</div>
+									<div class="mc-table-td">mixed</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										The product identifier for this order item. Product identifiers can be one of three possible ids: <ul> <li>product_id - integer</li> <li>product_sku - string</li> <li>shop_sku - string</li> </ul> For example, it the first order item identifies it's product by a DB key, you would use 'order_items[0][product_id]'. To identify the second order item's product by it's shop_sku, you would use 'order_items[1][shop_sku]'. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][quantity]</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">2</div>
+									<div class="mc-table-td">
+										The quantity of this product for this order item. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][price]</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">199</div>
+									<div class="mc-table-td">
+										The price of this product for this order item. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   attach_name[index]</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">LABEL</div>
+									<div class="mc-table-td">
+										Attaching files to an order requires to separate parameters - the attachment name (this parameter) and the attachment file. NOTE that attachment names are included in the standard parameters, while the files are included in additional sections of the multi-part form (please refer to the RFC if your library does not support this directly) 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   attach_file[index]</div>
+									<div class="mc-table-td">file</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										Attached files must be included in separate sections of your multipart form data. Note that the attachment name and file will be connected by the index of the parameters. 
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>order</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A order object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.mc_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">mc_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MC180408932</div>
+	<div class="mc-table-td rest-description">
+		The unique MyCloud identifier.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.customer" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>customer</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A customer object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CU0034</div>
+	<div class="mc-table-td rest-description">
+		The code assigned to the customer by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.phone_number" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.email" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.social_id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">social_id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MyLineId</div>
+	<div class="mc-table-td rest-description">
+		This is a social media id for the customer (e.g. Facebook ID or Line ID
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.address" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.postcode" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.note" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this customer.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.deliverymode" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>deliverymode</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A deliverymode object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">MA002</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s MyCloud internal identity code.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Kerry Express</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s name.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.contact" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">contact</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">contact@kerry-express.com</div>
+	<div class="mc-table-td rest-description">
+		Contact url or information for delivery mode provider.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.billing_title" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">billing_title</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Order #BD-0023</div>
+	<div class="mc-table-td rest-description">
+		The billing title of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer_ref" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">customer_ref</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CREF-20180304-A001</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned reference for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.order_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">order_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">ORD-004564014</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned order number of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.create_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">create_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was created in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.delivery_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">delivery_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was delivered in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.phone_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.email" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.address" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.postcode" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.note" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.total_price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">total_price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The total price for the order in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_amount" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_amount</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The amount the customer claims to have paid in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the customer claims to have made payment in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_time" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_time</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Time
+		
+	</div>
+	<div class="mc-table-td rest-example">15:32</div>
+	<div class="mc-table-td rest-description">
+		The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.weight" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">weight</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			float
+		
+	</div>
+	<div class="mc-table-td rest-example">0.453</div>
+	<div class="mc-table-td rest-description">
+		The total weight of the order being shipped in Kg.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.urgent" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">urgent</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			boolean
+		
+	</div>
+	<div class="mc-table-td rest-example">false</div>
+	<div class="mc-table-td rest-description">
+		If true, the order is considered urgent.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="update_order">Update Order
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">PATCH</span
+						><span class="uri">/orders/{order_id}</span></p>
+
+					<p class="description">Update an existing order with the specified order items, delivery mode, and possible customer. Only the parameters specified will be updated. If order items are provided, those matching existing attached order items will update only the price and/or quantity. Order items not matching existing attached order items will attach new order items to the order. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">customer_id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">232</div>
+									<div class="mc-table-td">
+										The DB key for the customer to attach to this order, or 0.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">delivery_mode_id</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">343</div>
+									<div class="mc-table-td">
+										The DB key for the delivery mode to be used to ship this order.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">order_items[]</div>
+									<div class="mc-table-td">array</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										The list of order items for this order. Each order item must be specified as an array of values, similar to HTML <form> parameters.
+		
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][product_id]</div>
+									<div class="mc-table-td">mixed</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										The product identifier for this order item. Product identifiers can be one of three possible ids: <ul> <li>product_id - integer</li> <li>product_sku - string</li> <li>shop_sku - string</li> </ul> For example, it the first order item identifies it's product by a DB key, you would use 'order_items[0][product_id]'. To identify the second order item's product by it's shop_sku, you would use 'order_items[1][shop_sku]'. Order items matching existing attached order items will update the quantity and price of that order item. Order items not matching existing order items will cause a new order item to be attached to the order. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][quantity]</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">2</div>
+									<div class="mc-table-td">
+										The quantity of this product for this order item. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   order_items[index][price]</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">199</div>
+									<div class="mc-table-td">
+										The price of this product for this order item. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   attach_name[index]</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">LABEL</div>
+									<div class="mc-table-td">
+										Attaching files to an order requires to separate parameters - the attachment name (this parameter) and the attachment file. NOTE that attachment names are included in the standard parameters, while the files are included in additional sections of the multi-part form (please refer to the RFC if your library does not support this directly). NOTE that an attachment with the same name as an existing attachment will replace the attached file with the newly uploaded file. 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">   attach_file[index]</div>
+									<div class="mc-table-td">file</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td"></div>
+									<div class="mc-table-td">
+										Attached files must be included in separate sections of your multipart form data. Note that the attachment name and file will be connected by the index of the parameters. 
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>order</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A order object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.mc_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">mc_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MC180408932</div>
+	<div class="mc-table-td rest-description">
+		The unique MyCloud identifier.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.customer" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>customer</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A customer object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CU0034</div>
+	<div class="mc-table-td rest-description">
+		The code assigned to the customer by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.phone_number" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.email" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.social_id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">social_id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MyLineId</div>
+	<div class="mc-table-td rest-description">
+		This is a social media id for the customer (e.g. Facebook ID or Line ID
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.address" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.postcode" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.note" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this customer.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.deliverymode" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>deliverymode</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A deliverymode object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">MA002</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s MyCloud internal identity code.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Kerry Express</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s name.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.contact" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">contact</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">contact@kerry-express.com</div>
+	<div class="mc-table-td rest-description">
+		Contact url or information for delivery mode provider.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.billing_title" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">billing_title</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Order #BD-0023</div>
+	<div class="mc-table-td rest-description">
+		The billing title of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer_ref" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">customer_ref</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CREF-20180304-A001</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned reference for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.order_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">order_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">ORD-004564014</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned order number of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.create_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">create_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was created in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.delivery_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">delivery_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was delivered in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.phone_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.email" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.address" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.postcode" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.note" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.total_price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">total_price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The total price for the order in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_amount" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_amount</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The amount the customer claims to have paid in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the customer claims to have made payment in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_time" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_time</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Time
+		
+	</div>
+	<div class="mc-table-td rest-example">15:32</div>
+	<div class="mc-table-td rest-description">
+		The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.weight" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">weight</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			float
+		
+	</div>
+	<div class="mc-table-td rest-example">0.453</div>
+	<div class="mc-table-td rest-description">
+		The total weight of the order being shipped in Kg.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.urgent" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">urgent</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			boolean
+		
+	</div>
+	<div class="mc-table-td rest-example">false</div>
+	<div class="mc-table-td rest-description">
+		If true, the order is considered urgent.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="delete_order">Delete Order
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">DELETE</span
+						><span class="uri">/orders/{order_id}</span></p>
+
+					<p class="description">Delete an existing order. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="no-parameters">
+							<p>This request has no parameters.</p>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>order</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A order object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.mc_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">mc_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MC180408932</div>
+	<div class="mc-table-td rest-description">
+		The unique MyCloud identifier.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.customer" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>customer</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A customer object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		The database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CU0034</div>
+	<div class="mc-table-td rest-description">
+		The code assigned to the customer by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.phone_number" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.email" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.social_id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">social_id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MyLineId</div>
+	<div class="mc-table-td rest-description">
+		This is a social media id for the customer (e.g. Facebook ID or Line ID
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.address" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.postcode" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the customer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer.note" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this customer.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+		
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="order.deliverymode" data-origin="rm-robj-rofs-robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>deliverymode</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A deliverymode object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.id" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.code" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">code</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">MA002</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s MyCloud internal identity code.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.name" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Kerry Express</div>
+	<div class="mc-table-td rest-description">
+		This is the delivery mode&#39;s name.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.deliverymode.contact" data-origin="rm-robj-rofs-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">contact</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">contact@kerry-express.com</div>
+	<div class="mc-table-td rest-description">
+		Contact url or information for delivery mode provider.
+	</div>
+</div>
+
+	
+
+
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.billing_title" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">billing_title</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Order #BD-0023</div>
+	<div class="mc-table-td rest-description">
+		The billing title of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.customer_ref" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">customer_ref</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">CREF-20180304-A001</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned reference for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.order_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">order_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">ORD-004564014</div>
+	<div class="mc-table-td rest-description">
+		The customer assigned order number of this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.create_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">create_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was created in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.delivery_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">delivery_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the order was delivered in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">คุณ พวริด</div>
+	<div class="mc-table-td rest-description">
+		The name of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.phone_number" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">phone_number</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">0899969094</div>
+	<div class="mc-table-td rest-description">
+		The phone number of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.email" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">email</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">customer@domain.com</div>
+	<div class="mc-table-td rest-description">
+		The email address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.address" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">address</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">32/1 สุขุมวิท 62, กรุงเทพฯ</div>
+	<div class="mc-table-td rest-description">
+		The physical address of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.postcode" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">postcode</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">10260</div>
+	<div class="mc-table-td rest-description">
+		The postcode of the order recipient.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.note" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">note</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">This is a special order.</div>
+	<div class="mc-table-td rest-description">
+		A text note provided for this order.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.total_price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">total_price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The total price for the order in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_amount" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_amount</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">899</div>
+	<div class="mc-table-td rest-description">
+		The amount the customer claims to have paid in THB.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_date" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_date</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Date
+		
+	</div>
+	<div class="mc-table-td rest-example">2017-12-31</div>
+	<div class="mc-table-td rest-description">
+		The date the customer claims to have made payment in the format of YYYY-mm-dd.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.payment_time" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">payment_time</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			Time
+		
+	</div>
+	<div class="mc-table-td rest-example">15:32</div>
+	<div class="mc-table-td rest-description">
+		The time the customer claims to have made payment in the format of HH:MM (HH is 00 to 23)
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.weight" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">weight</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			float
+		
+	</div>
+	<div class="mc-table-td rest-example">0.453</div>
+	<div class="mc-table-td rest-description">
+		The total weight of the order being shipped in Kg.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="order.urgent" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">urgent</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			boolean
+		
+	</div>
+	<div class="mc-table-td rest-example">false</div>
+	<div class="mc-table-td rest-description">
+		If true, the order is considered urgent.
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+
+			
+
+		</div>
+	
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+name="customer"
+
+[[fields]]
+	name="id"
+	type="integer"
+	example="342"
+	description="The database key."
+[[fields]]
+	name="code"
+	type="string"
+	example="CU0034"
+	description="The code assigned to the customer by the shop."
+[[fields]]
+	name="name"
+	type="string"
+	example="คุณ พวริด"
+	description="The name of the customer."
+[[fields]]
+	name="phone_number"
+	type="string"
+	example="0899969094"
+	description="The phone number of the customer."
+[[fields]]
+	name="email"
+	type="string"
+	example="customer@domain.com"
+	description="The email address of the customer."
+[[fields]]
+	name="social_id"
+	type="string"
+	example="MyLineId"
+	description="This is a social media id for the customer (e.g. Facebook ID or Line ID"
+[[fields]]
+	name="address"
+	type="string"
+	example="32/1 สุขุมวิท 62, กรุงเทพฯ"
+	description="The physical address of the customer."
+[[fields]]
+	name="postcode"
+	type="string"
+	example="10260"
+	description="The postcode of the customer."
+[[fields]]
+	name="note"
+	type="string"
+	example="This is a special order."
+	description="A text note provided for this customer."

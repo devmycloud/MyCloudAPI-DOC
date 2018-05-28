@@ -1,0 +1,294 @@
+title = "Order"
+readonly = false
+references = []
+
+[[routes]]
+	id="get_all_orders"
+	name="Get All Orders"
+	method="GET"
+	url="/orders"
+	title="Get all orders."
+	description="""Get all Orders associated with your account. \
+		Note, your account may contain many orders, and retrieving \
+		all of them in one call puts an excessive load on the server, \
+		as well as requiring a long time to reply. This will typically \
+		result in your request timing out. Thus, is it recommended that \
+		you use the 'offset' and 'count' parameters to <em>paginate</em> \
+		getting all orders. Setup a loop and start with offset 0, and a \
+		count that is reasonable (e.g. 20), then increment offset by count \
+		for each loop iteration. This request will return only <em>undeleted</em> \
+		orders. If you want to rerieve deleted orders as well, setup the \
+		<em>deleted</em> parameter. \
+	"""
+
+	[[routes.response]]
+		name="orders"
+		type="array"
+		arrtype="object"
+		model="order"
+		example=""
+		description="""The list of Orders requested according to the pagination \
+			and deleted parameters. \
+			"""
+
+[[routes]]
+	id="get_order"
+	name="Get Order"
+	method="GET"
+	url="/orders/{id}"
+	title="Get an order."
+	description="Get an order by it's ID."
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="197984"
+		description="The DB key for the order."
+
+	[[routes.response]]
+		name="order"
+		type="object"
+		model="order"
+		example=""
+		description="The order identified by {id}."
+
+
+[[routes]]
+	id="get_order_items"
+	name="Get Order Items"
+	method="GET"
+	url="/orders/{id}/orderitems"
+	title="Get order items."
+	description="""Get all order items for an order specified by id. \
+	"""
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="1984"
+		description="The DB key for the order to retrieve the order items for."
+
+	[[routes.response]]
+		name="orderitems"
+		type="array"
+		arrtype="object"
+		model="orderitem"
+		example=""
+		description="The order items attached to the order identified by {id}."
+
+
+[[routes]]
+	id="create_order"
+	name="Create Order"
+	method="POST"
+	url="/orders"
+	title="Create a new order."
+	description="""Create a new order with the specified order items, delivery \
+	mode, and possible customer. \
+	"""
+
+	[[routes.parameters]]
+		name="customer_id"
+		type="integer"
+		required=false
+		example="232"
+		description="The DB key for the customer to attach to this order, or 0."
+
+	[[routes.parameters]]
+		name="delivery_mode_id"
+		type="integer"
+		required=true
+		example="343"
+		description="The DB key for the delivery mode to be used to ship this order."
+
+	[[routes.parameters]]
+		name="order_items[]"
+		type="array"
+		required=true
+		example=""
+		description="""The list of order items for this order. Each order item must be \
+		specified as an array of values, similar to HTML <form> parameters.
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][product_id]"
+		type="mixed"
+		required=true
+		example=""
+		description="""The product identifier for this order item. Product identifiers can \
+		be one of three possible ids: \
+		<ul> \
+			<li>product_id - integer</li> \
+			<li>product_sku - string</li> \
+			<li>shop_sku - string</li> \
+		</ul> \
+		For example, it the first order item identifies it's product by a DB key, you would use \
+		'order_items[0][product_id]'. To identify the second order item's product by it's shop_sku, \
+		you would use 'order_items[1][shop_sku]'. \
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][quantity]"
+		type="integer"
+		required=true
+		example="2"
+		description="""The quantity of this product for this order item. \
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][price]"
+		type="integer"
+		required=true
+		example="199"
+		description="""The price of this product for this order item. \
+		"""
+
+	[[routes.parameters]]
+		name="   attach_name[index]"
+		type="string"
+		required=false
+		example="LABEL"
+		description="""Attaching files to an order requires to separate parameters - \
+		the attachment name (this parameter) and the attachment file. NOTE that attachment \
+		names are included in the standard parameters, while the files are included in \
+		additional sections of the multi-part form (please refer to the RFC if your library \
+		does not support this directly) \
+		"""
+
+	[[routes.parameters]]
+		name="   attach_file[index]"
+		type="file"
+		required=false
+		example=""
+		description="""Attached files must be included in separate sections of your multipart \
+		form data. Note that the attachment name and file will be connected by the index of \
+		the parameters. \
+		"""
+
+	[[routes.response]]
+		name="order"
+		type="object"
+		model="order"
+		example=""
+		description="The created order"
+
+
+[[routes]]
+	id="update_order"
+	name="Update Order"
+	method="PATCH"
+	url="/orders/{order_id}"
+	title="Update an existing order."
+	description="""Update an existing order with the specified order items, delivery \
+	mode, and possible customer. Only the parameters specified will be updated. If \
+	order items are provided, those matching existing attached order items will update \
+	only the price and/or quantity. Order items not matching existing attached order \
+	items will attach new order items to the order. \
+	"""
+
+	[[routes.parameters]]
+		name="customer_id"
+		type="integer"
+		required=false
+		example="232"
+		description="The DB key for the customer to attach to this order, or 0."
+
+	[[routes.parameters]]
+		name="delivery_mode_id"
+		type="integer"
+		required=false
+		example="343"
+		description="The DB key for the delivery mode to be used to ship this order."
+
+	[[routes.parameters]]
+		name="order_items[]"
+		type="array"
+		required=false
+		example=""
+		description="""The list of order items for this order. Each order item must be \
+		specified as an array of values, similar to HTML <form> parameters.
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][product_id]"
+		type="mixed"
+		required=false
+		example=""
+		description="""The product identifier for this order item. Product identifiers can \
+		be one of three possible ids: \
+		<ul> \
+			<li>product_id - integer</li> \
+			<li>product_sku - string</li> \
+			<li>shop_sku - string</li> \
+		</ul> \
+		For example, it the first order item identifies it's product by a DB key, you would use \
+		'order_items[0][product_id]'. To identify the second order item's product by it's shop_sku, \
+		you would use 'order_items[1][shop_sku]'. Order items matching existing attached order items \
+		will update the quantity and price of that order item. Order items not matching existing \
+		order items will cause a new order item to be attached to the order. \
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][quantity]"
+		type="integer"
+		required=true
+		example="2"
+		description="""The quantity of this product for this order item. \
+		"""
+
+	[[routes.parameters]]
+		name="   order_items[index][price]"
+		type="integer"
+		required=true
+		example="199"
+		description="""The price of this product for this order item. \
+		"""
+
+	[[routes.parameters]]
+		name="   attach_name[index]"
+		type="string"
+		required=false
+		example="LABEL"
+		description="""Attaching files to an order requires to separate parameters - \
+		the attachment name (this parameter) and the attachment file. NOTE that attachment \
+		names are included in the standard parameters, while the files are included in \
+		additional sections of the multi-part form (please refer to the RFC if your library \
+		does not support this directly). NOTE that an attachment with the same name as an \
+		existing attachment will replace the attached file with the newly uploaded file. \
+		"""
+
+	[[routes.parameters]]
+		name="   attach_file[index]"
+		type="file"
+		required=false
+		example=""
+		description="""Attached files must be included in separate sections of your multipart \
+		form data. Note that the attachment name and file will be connected by the index of \
+		the parameters. \
+		"""
+
+	[[routes.response]]
+		name="order"
+		type="object"
+		model="order"
+		example=""
+		description="The updated order"
+
+
+[[routes]]
+	id="delete_order"
+	name="Delete Order"
+	method="DELETE"
+	url="/orders/{order_id}"
+	title="Delete an existing order."
+	description="""Delete an existing order. \
+	"""
+
+	[[routes.response]]
+		name="order"
+		type="object"
+		model="order"
+		example=""
+		description="The order that was deleted."

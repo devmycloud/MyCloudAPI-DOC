@@ -1,0 +1,84 @@
+title = "Order Item"
+readonly = false
+references = []
+
+[[routes]]
+	id="get_order_item"
+	name="Get Order Item"
+	method="GET"
+	url="/orderitems/{id}"
+	title="Get order item."
+	description="""Get a specific order item by id. \
+	"""
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="1984"
+		description="The DB key for the delivery mode."
+
+	[[routes.response]]
+		name="orderitem"
+		type="object"
+		model="orderitem"
+		example=""
+		description="The order item identified by {id}."
+
+[[routes]]
+	id="update_order_item"
+	name="Update Order Item"
+	method="PATCH"
+	url="/orderitems/{id}"
+	title="Get delivery mode."
+	description="""Get a specific delivery mode by id. \
+	"""
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="196179"
+		description="The DB key for the order item."
+	[[routes.parameters]]
+		name="price"
+		type="integer"
+		required=true
+		example="199"
+		description="The price for this order item."
+	[[routes.parameters]]
+		name="quantity"
+		type="integer"
+		required=true
+		example="2"
+		description="The number of this order item purchased in this order."
+
+	[[routes.response]]
+		name="orderitem"
+		type="object"
+		model="orderitem"
+		example=""
+		description="The updated order item object."
+
+[[routes]]
+	id="delete_order_item"
+	name="Delete Order Item"
+	method="DELETE"
+	url="/order_item/{id}"
+	title="Delete order item."
+	description="""Delete the order item identified by id from it's order. \
+	"""
+
+	[[routes.parameters]]
+		name="id"
+		type="integer"
+		required=true
+		example="196179"
+		description="The DB key for the order item."
+
+	[[routes.response]]
+		name="orderitem"
+		type="object"
+		model="orderitem"
+		example=""
+		description="The deleted order item object."

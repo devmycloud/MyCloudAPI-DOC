@@ -1,0 +1,2949 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MyCloud API Documentation</title>
+	<link rel="icon" type="image/png" sizes="96x96" href="../../../../img/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="72x72" href="../../../../img/favicon-72x72.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../../../img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../../../img/favicon-16x16.png">
+	<link href="../../../../css/mycloud.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i|Roboto+Condensed:400,700" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+		integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://use.fontawesome.com/e353b17481.js"></script>
+</head>
+<body class="mycloud-api ">
+
+	<div class="page-heading">
+		<div class="heading">
+			<a href="../../../../"><img src="../../../../img/logo_white.png" alt="MyCloud Logo"></a>
+			<h1>MyCloud API PHP SDK</h1>
+			<div class="buttons">
+				<a href="https://github.com/devmycloud/MyCloudAPI-DOC"><span class="fa fa-github"></span> GutHub</a>
+				<a href="../../../../readme/">README</a>
+				<a href="../../../../apidocs/">Documentation</a>
+				<a href="https://github.com/devmycloud/MyCloudAPI-SDK-PHP">PHP SDK</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="page-content restful-content" data-source="layouts-default-restmodel">
+
+	
+		
+		
+		<div class="bread-crumb">
+			<a href="../../../../">Home</a
+				>&nbsp;&gt; <a href="../../../../apidocs/">API&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/">RESTful&nbsp;Docs</a
+				>&nbsp;&gt; <a href="../../../../apidocs/rest/models/">Models</a
+				>&nbsp;&gt; Product
+		</div>
+		
+
+		<h1>Product Model
+			
+		</h1>
+
+		<p>
+The Product model defines a product in your shop.
+Products are warehoused at MyCloud and are avaialable
+to be added to Orders via OrderItems.
+</p>
+
+
+		<div class="restful-content">
+			<h2 id="restful_calls">RESTful Calls</h2>
+			<ul class="restful-call-list">
+			
+				<li><a href="#get_all_products">Get All Products</a></li>
+			
+				<li><a href="#get_product">Get Product</a></li>
+			
+				<li><a href="#create_product">Create Product</a></li>
+			
+				<li><a href="#update_product">Update Product</a></li>
+			
+				<li><a href="#delete_product">Delete Product</a></li>
+			
+			</ul>
+
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_all_products">Get All Products
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/products</span></p>
+
+					<p class="description">Get all Products associated with your shop. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="no-parameters">
+							<p>This request has no parameters.</p>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+
+<div class="mc-table-tr" date-type="node" data-path="products[]" data-origin="rof">
+	
+	<div data-level="1" class="mc-table-td rest-field level-1">
+	
+		<div class="rest-field-inner node">
+		
+			<span class="ctl"></span>
+		
+		<span class="name">products</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			
+				product[]
+			
+		
+	</div>
+	<div class="mc-table-td rest-example"></div>
+	<div class="mc-table-td rest-description">
+		The list of products defined by your shop. 
+	</div>
+</div>
+
+
+	
+	
+	
+
+	
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" data-type="node" data-path="products[].product" data-origin="robj">
+	<div class="mc-table-td rest-field level-2">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>product</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A product object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.id" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.sku" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MAI002</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s MyCloud SKU. This is assigned by MyCloud and cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.shop_sku" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">shop_sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">UPC_230458300</div>
+	<div class="mc-table-td rest-description">
+		This is the shop&#39;s product SKU. This is the SKU assigned by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.name" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Cool Glasses</div>
+	<div class="mc-table-td rest-description">
+		The name of the product as it should be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.cost" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">cost</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">129</div>
+	<div class="mc-table-td rest-description">
+		The is the amount that the shop pays to buy the product.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.price" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">199</div>
+	<div class="mc-table-td rest-description">
+		This is price that the shop typically sells the product for. This can be overridden within an order when defining the orderitem for this product. 
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.description" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">description</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Brand name glasses with no magnification perfect for a fashion statement.</div>
+	<div class="mc-table-td rest-description">
+		This is the product description that will be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="products[].product.supplier_reference" data-origin="robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-3">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">supplier_reference</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">REF_987324_BA_1</div>
+	<div class="mc-table-td rest-description">
+		This may be used for any purpose, but is intended to represent the reference that the product supplier uses to communicate with the shop for this product. 
+	</div>
+</div>
+
+	
+
+
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="get_product">Get Product
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">GET</span
+						><span class="uri">/products/{product_id}</span></p>
+
+					<p class="description">Get a product by it&#39;s ID.</p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">product_id</div>
+									<div class="mc-table-td">mixed</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">sku_12345</div>
+									<div class="mc-table-td">
+										The product identity. This method allows you to identify the product with one of three different values:
+			<ul>
+				<li>ID - the database ID</li>
+				<li>SKU - the MyCloud assigned SKU</li>
+				<li>ShopSku - the shop assigned SKU</li>
+			</ul>
+		
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="product" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>product</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A product object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MAI002</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s MyCloud SKU. This is assigned by MyCloud and cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.shop_sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">shop_sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">UPC_230458300</div>
+	<div class="mc-table-td rest-description">
+		This is the shop&#39;s product SKU. This is the SKU assigned by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Cool Glasses</div>
+	<div class="mc-table-td rest-description">
+		The name of the product as it should be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.cost" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">cost</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">129</div>
+	<div class="mc-table-td rest-description">
+		The is the amount that the shop pays to buy the product.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">199</div>
+	<div class="mc-table-td rest-description">
+		This is price that the shop typically sells the product for. This can be overridden within an order when defining the orderitem for this product. 
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.description" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">description</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Brand name glasses with no magnification perfect for a fashion statement.</div>
+	<div class="mc-table-td rest-description">
+		This is the product description that will be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.supplier_reference" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">supplier_reference</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">REF_987324_BA_1</div>
+	<div class="mc-table-td rest-description">
+		This may be used for any purpose, but is intended to represent the reference that the product supplier uses to communicate with the shop for this product. 
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="create_product">Create Product
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">POST</span
+						><span class="uri">/products</span></p>
+
+					<p class="description">Create a new product with the specified attributes. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">shop_sku</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">sku_7832598</div>
+									<div class="mc-table-td">
+										The SKU assigned by the shop.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">name</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">Cool Glasses</div>
+									<div class="mc-table-td">
+										The name of the product being created.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">description</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">Fashionable glasses with no magnification.</div>
+									<div class="mc-table-td">
+										The description of the product being created.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">cost</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">129</div>
+									<div class="mc-table-td">
+										The price the shop pays to purchase this product.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">price</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">199</div>
+									<div class="mc-table-td">
+										The price the shop charges buyers to purchase this product.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="product" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>product</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A product object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MAI002</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s MyCloud SKU. This is assigned by MyCloud and cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.shop_sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">shop_sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">UPC_230458300</div>
+	<div class="mc-table-td rest-description">
+		This is the shop&#39;s product SKU. This is the SKU assigned by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Cool Glasses</div>
+	<div class="mc-table-td rest-description">
+		The name of the product as it should be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.cost" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">cost</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">129</div>
+	<div class="mc-table-td rest-description">
+		The is the amount that the shop pays to buy the product.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">199</div>
+	<div class="mc-table-td rest-description">
+		This is price that the shop typically sells the product for. This can be overridden within an order when defining the orderitem for this product. 
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.description" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">description</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Brand name glasses with no magnification perfect for a fashion statement.</div>
+	<div class="mc-table-td rest-description">
+		This is the product description that will be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.supplier_reference" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">supplier_reference</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">REF_987324_BA_1</div>
+	<div class="mc-table-td rest-description">
+		This may be used for any purpose, but is intended to represent the reference that the product supplier uses to communicate with the shop for this product. 
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="update_product">Update Product
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">PATCH</span
+						><span class="uri">/products/{product_id}</span></p>
+
+					<p class="description">Update an existing product with the specified parameters. You can provide any of the update parameters. Parameters specified will update those fields of the product in the database. Other fields will be left as is. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">product_id</div>
+									<div class="mc-table-td">mixed</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">sku_12345</div>
+									<div class="mc-table-td">
+										The product identity. This method allows you to identify the product with one of three different values: <ul> <li>ID - the database ID</li> <li>SKU - the MyCloud assigned SKU</li> <li>ShopSku - the shop assigned SKU</li> </ul> 
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">shop_sku</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">sku_7832598</div>
+									<div class="mc-table-td">
+										The SKU assigned by the shop.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">name</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">Cool Glasses</div>
+									<div class="mc-table-td">
+										The name of the product being created.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">description</div>
+									<div class="mc-table-td">string</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">Fashionable glasses with no magnification.</div>
+									<div class="mc-table-td">
+										The description of the product being created.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">cost</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">129</div>
+									<div class="mc-table-td">
+										The price the shop pays to purchase this product.
+									</div>
+								</div>
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">price</div>
+									<div class="mc-table-td">integer</div>
+									
+										<div class="mc-table-td">No</div>
+									
+									<div class="mc-table-td">199</div>
+									<div class="mc-table-td">
+										The price the shop charges buyers to purchase this product.
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="product" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>product</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A product object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MAI002</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s MyCloud SKU. This is assigned by MyCloud and cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.shop_sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">shop_sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">UPC_230458300</div>
+	<div class="mc-table-td rest-description">
+		This is the shop&#39;s product SKU. This is the SKU assigned by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Cool Glasses</div>
+	<div class="mc-table-td rest-description">
+		The name of the product as it should be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.cost" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">cost</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">129</div>
+	<div class="mc-table-td rest-description">
+		The is the amount that the shop pays to buy the product.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">199</div>
+	<div class="mc-table-td rest-description">
+		This is price that the shop typically sells the product for. This can be overridden within an order when defining the orderitem for this product. 
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.description" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">description</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Brand name glasses with no magnification perfect for a fashion statement.</div>
+	<div class="mc-table-td rest-description">
+		This is the product description that will be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.supplier_reference" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">supplier_reference</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">REF_987324_BA_1</div>
+	<div class="mc-table-td rest-description">
+		This may be used for any purpose, but is intended to represent the reference that the product supplier uses to communicate with the shop for this product. 
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="restful-call">
+				<div class="restful-routes">
+					<h3 id="delete_product">Delete Product
+						<a href="#restful_calls"><span class="fa fa-list-ul route-list"></span></a>
+					</h3>
+
+					<p class="restful-route"><span class="method">DELETE</span
+						><span class="uri">/products/{product_id}</span></p>
+
+					<p class="description">Delete an existing product. </p>
+
+					<h4>Request Parameters</h4>
+					
+						<div class="mc-table rest-param-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-parm-col">
+										Parameter
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-required-col">
+										Required
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+								<div class="mc-table-tr">
+									<div class="mc-table-td rest-parameter">product_id</div>
+									<div class="mc-table-td">mixed</div>
+									
+										<div class="mc-table-td">Yes</div>
+									
+									<div class="mc-table-td">sku_12345</div>
+									<div class="mc-table-td">
+										The product identity. This method allows you to identify the product with one of three different values: <ul> <li>ID - the database ID</li> <li>SKU - the MyCloud assigned SKU</li> <li>ShopSku - the shop assigned SKU</li> </ul> 
+									</div>
+								</div>
+							
+							</div>
+						</div>
+					
+
+					<h4>Response</h4>
+					<div class="response">
+						
+						
+						<div class="mc-table rest-model-table">
+							<div class="mc-table-thead">
+								<div class="mc-table-tr">
+									<div class="mc-table-th rest-data-col">
+										Name
+									</div>
+									<div class="mc-table-th rest-type-col">
+										Type
+									</div>
+									<div class="mc-table-th rest-example-col">
+										Example
+									</div>
+									<div class="mc-table-th rest-description-col">
+										Description
+									</div>
+								</div>
+							</div>
+							<div class="mc-table-tbody">
+							
+							
+								
+								
+									
+								
+								
+									
+								
+								
+									
+								
+								
+								
+									
+									
+									
+
+	
+
+
+
+
+
+	
+
+
+
+
+	
+
+
+<div class="mc-table-tr" data-type="node" data-path="product" data-origin="rm-robj">
+	<div class="mc-table-td rest-field level-1">
+		<div class="rest-field-inner node">
+			<span class="ctl"></span>
+			<span>product</span>
+		</div>
+	</div>
+	<div class="mc-table-td">Object</div>
+	<div class="mc-table-td">&nbsp;</div>
+	<div class="mc-table-td">A product object.</div>
+</div>
+
+
+
+
+	
+
+
+
+
+
+	
+	
+		
+	
+	
+		
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.id" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf first">
+		
+		<span class="name">id</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">342</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s database key.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">MAI002</div>
+	<div class="mc-table-td rest-description">
+		This is the product&#39;s MyCloud SKU. This is assigned by MyCloud and cannot be changed.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.shop_sku" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">shop_sku</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">UPC_230458300</div>
+	<div class="mc-table-td rest-description">
+		This is the shop&#39;s product SKU. This is the SKU assigned by the shop.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.name" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">name</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Cool Glasses</div>
+	<div class="mc-table-td rest-description">
+		The name of the product as it should be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.cost" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">cost</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">129</div>
+	<div class="mc-table-td rest-description">
+		The is the amount that the shop pays to buy the product.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.price" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">price</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			integer
+		
+	</div>
+	<div class="mc-table-td rest-example">199</div>
+	<div class="mc-table-td rest-description">
+		This is price that the shop typically sells the product for. This can be overridden within an order when defining the orderitem for this product. 
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.description" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf">
+		
+		<span class="name">description</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">Brand name glasses with no magnification perfect for a fashion statement.</div>
+	<div class="mc-table-td rest-description">
+		This is the product description that will be presented to the buyer.
+	</div>
+</div>
+
+	
+
+	
+	
+		
+	
+	
+	
+		
+	
+
+	
+		
+		
+		
+
+	
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<div class="mc-table-tr" date-type="leaf" data-path="product.supplier_reference" data-origin="rm-robj-rofs-rof">
+	
+	<div class="mc-table-td rest-field level-2">
+	
+		<div class="rest-field-inner leaf last">
+		
+		<span class="name">supplier_reference</span>
+		</div>
+	</div>
+	<div class="mc-table-td rest-type">
+		
+			string
+		
+	</div>
+	<div class="mc-table-td rest-example">REF_987324_BA_1</div>
+	<div class="mc-table-td rest-description">
+		This may be used for any purpose, but is intended to represent the reference that the product supplier uses to communicate with the shop for this product. 
+	</div>
+</div>
+
+	
+
+
+
+								
+							
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+
+			
+
+		</div>
+	
+
+<script type="text/javascript">
+$(document).ready(function() {
+	console.log( "MyCloud API DOC (ready)" );
+
+	function control_node(node, isCollapsing) {
+		var path = node.data('path');
+		var startPath = path + '.';
+		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
+		console.log( node );
+		console.log( "   path       = '" + path + "'" );
+		console.log( "   startPath  = '" + startPath + "'" );
+
+		node.find('~ .mc-table-tr').each(function() {
+			var subPath = $(this).data('path');
+			var nodeType = $(this).data('type');
+			var thisCollapsed = $(this).hasClass('collapsed');
+			console.log( "   subPath    = '" + subPath + "'" );
+			console.log( "   nodeType   = '" + nodeType + "'" );
+			console.log( "   thisColp   = '" + thisCollapsed + "'" );
+
+			if ( nodeType == 'node' ) {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						
+						
+						if ( isCollapsing || ! thisCollapsed ) {
+							control_node($(this), isCollapsing);
+						}
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			} else {
+				if ( subPath.startsWith(startPath) ) {
+					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
+						if ( isCollapsing ) {
+							$(this).addClass('closed');
+						} else {
+							$(this).removeClass('closed');
+						}
+					}
+				}
+			}
+		});
+	}
+
+	$('.rest-field-inner .ctl').on('click', function() {
+		var thisRow = $(this).parents('.mc-table-tr');
+
+		control_node( thisRow, ! thisRow.hasClass('collapsed') );
+
+		if ( thisRow.hasClass('collapsed') ) {
+			thisRow.removeClass('collapsed');
+		} else {
+			thisRow.addClass('collapsed');
+		}
+	});
+})
+</script>
+</body>
+</html>
+
