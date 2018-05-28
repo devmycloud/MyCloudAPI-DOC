@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MyCloudFulfillment API Documentation</title>
-    <link>http://localhost/MyCloudAPI-DOC/apidocs/</link>
+    <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/</link>
     <description>Recent content on MyCloudFulfillment API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://localhost/MyCloudAPI-DOC/apidocs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/authentication/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/authentication/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/authentication/</guid>
       <description>Authentication  The MyCloud API uses JSON Web Tokens (JWT) for authetication. This stateless authentication protocol is becoming a popular standard for API&#39;s for many good technical reasons. Here at MyCloud, we chose JWT because it is straighforward to implement, requires very little overhead, has libraries available in almost every popular programming language, and eliminates the need for state (such as sessions and cookies), which means that it can scale better.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/connection/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/connection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/connection/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/connection/</guid>
       <description>Connection  The MyCloud API is a RESTful API implemented using the HTTP protocol. This means that all connections to the API are the same as any other HTTP connection, which is the protocol used by every web browser to access a website. The advantage of the HTTP protocol is that it is a well established standard that is supported by every modern programming language in use today. </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/overview-api/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/overview-api/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-api/</guid>
       <description>API Overview  The MyCloud API is a RESTful API. It is built on top of the HTTP protocol to implement communications with the API server. API Requests  Client API requests send their data to the API server using the multipart/form-data specification defined by RFC7578, which is the same standard that web browsers use to submit form data when you submit an HTML &amp;lt;FORM&amp;gt; using the &#39;multipart/form-data&#39; enctype. This standard was chosen because it is supported by virtually every modern programming language, and has many online tools for simulating requests with the data format.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/overview-protocol/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-protocol/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/overview-protocol/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-protocol/</guid>
       <description>Protocol  The MyCloud API is a RESTful API implemented using the HTTP protocol. Over the HTTP protocol, a communication protocol is utilized to exchange the data necessary to fulfill any API request. The protocol uses two separate standards to implement the data exchange:   Upstream: multipart/form-data   Downstream: JSON   Upstream  The upstream data is the data sent from the API client to the API server.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/overview/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/overview/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview/</guid>
       <description>API Overview  The MyCloud API is a RESTful API providing access to your MyCloud shop and the data associated with your shop. The current release of the API does not implement access to every element of your shop. It is designedprimarily to facilitate managing your customer, products and orders. Future releases of the API will continue to add more functionality.  The API is implemented using standard HTTP connectivity and standard HTTP protocols.</description>
     </item>
     
