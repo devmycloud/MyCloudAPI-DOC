@@ -30,15 +30,6 @@
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/index-old/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/index-old/</guid>
-      <description>Home&amp;nbsp;&amp;gt;&amp;nbsp;API&amp;nbsp;Documentation  API Overview  Overview Connection Authentication API Overview API Protocol &amp;nbsp; RESTful Overview PHP SDK Overview  API Models  Customer Delivery Mode Order Order Item Product Product Category Shop  </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://localhost/MyCloudAPI-DOC/apidocs/overview-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

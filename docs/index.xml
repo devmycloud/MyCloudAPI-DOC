@@ -30,15 +30,6 @@
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/index-old/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/index-old/</guid>
-      <description>Home&amp;nbsp;&amp;gt;&amp;nbsp;API&amp;nbsp;Documentation  API Overview  Overview Connection Authentication API Overview API Protocol &amp;nbsp; RESTful Overview PHP SDK Overview  API Models  Customer Delivery Mode Order Order Item Product Product Category Shop  </description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://localhost/MyCloudAPI-DOC/apidocs/overview-api/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -97,11 +88,12 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://localhost/MyCloudAPI-DOC/readme/</guid>
-      <description>MyCloudAPI-SDK-PHP PHP based SDK for the MyCloud Fulfillment API
-Please see the Project Page for up-to-date information, additional project details, and downloads.
-Prerequisites  PHP 5.6 or above curl, json &amp;amp; openssl extensions must be enabled  Getting Started You are encouraged to use Composer to integrate this API with your PHP project.
-To include the project, make the following additions to your composer.json file:
-&amp;quot;require&amp;quot;: { &amp;quot;mycloudth/rest-api-sdk-php&amp;quot;: &amp;quot;dev-master&amp;quot; }, &amp;quot;repositories&amp;quot;: [ { &amp;quot;type&amp;quot;: &amp;quot;vcs&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;https://github.</description>
+      <description>MyCloudAPI-DOC MyCloud Fulfillment API Documentation
+This documentation was built using Hugo.
+Please see the GitHub Page for access to the latest commits, as well as to download the source that generated this documentation.
+Please see the Documentation Page for up-to-date information, additional project details, and downloads.
+Support Inquiries regarding this API should be directed to &amp;ldquo;dev@mycloudfulfillment.com&amp;rdquo;
+License Read License.txt for licensing information.</description>
     </item>
     
     <item>
