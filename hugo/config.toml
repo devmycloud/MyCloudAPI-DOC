@@ -1,7 +1,7 @@
-#baseURL = "https://devmycloud.github.io/MyCloudAPI-API/"
-baseURL = "http://localhost/MyCloudAPI-DOC/"
+baseURL = "https://devmycloud.github.io/MyCloudAPI-DOC/"
+#baseURL = "http://localhost/MyCloudAPI-DOC/"
 languageCode = "en-us"
-title = "MyCloudFulfillment API PHP SDK"
+title = "MyCloudFulfillment API Documentation"
 relativeURLs = "true"
 
 [params]

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MyCloudFulfillment API PHP SDK</title>
-    <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/</link>
-    <description>Recent content on MyCloudFulfillment API PHP SDK</description>
+    <title>MyCloudFulfillment API Documentation</title>
+    <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/</link>
+    <description>Recent content on MyCloudFulfillment API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://localhost/MyCloudAPI-DOC/apidocs/rest/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/</guid>
       <description>Home&amp;nbsp;&amp;gt;&amp;nbsp;RESTful&amp;nbsp;API&amp;nbsp;Documentation  API Overview  Overview  RESTful Models  Customer Delivery Mode Order Order Item Product Product Category Shop  </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/overview/</link>
+      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/overview/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/overview/</guid>
+      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/overview/</guid>
       <description>PHP SDK Overview  The MyCloud API PHP SDK provides a complete PHP implementation of the client side the API. With the PHP SDK, you do not need to worry about any of the low level details of programming with the API. Connectivity, authentication, model objects, logging, and other supporting code is all provided for you.  When working with the PHP SDK, you will work primarily with the API model objects.</description>
     </item>
     
