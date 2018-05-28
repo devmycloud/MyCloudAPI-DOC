@@ -1,0 +1,36 @@
+<div class="code-examples">
+	<h5>Using a JWT Token</h5>
+	<p>
+		Once you have retrieved your JWT token, you simply
+		include it in your Authorization header.
+	</p>
+
+	<ul class="example-tabs">
+		<li class="active" data-panel="php">PHP</li
+		><li data-panel="csharp">C#</li>
+	</ul>
+	<div class="panels">
+		<div class="panel php active">
+<pre>
+	...
+
+    curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $token
+		)
+	);
+
+	...
+</pre>
+		</div>
+
+		<div class="panel csharp">
+<pre>
+	...
+
+	request.Headers.Add( "Authorization", "Bearer " + token );
+
+	...
+</pre>
+		</div>
+	</div>
+</div>

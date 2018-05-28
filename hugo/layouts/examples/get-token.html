@@ -1,0 +1,76 @@
+<div class="code-examples">
+	<h5>Getting a JWT Token</h5>
+	<p>
+		Please note, you do not need to use any library to decode your token.
+		The token may be used as-is with your requests. However, by decoding
+		the token, you are able to get it's expiration time, which can help
+		you with managing tokens within your code.
+	</p>
+
+	<ul class="example-tabs">
+		<li class="active" data-panel="php">PHP</li
+		><li data-panel="csharp">C#</li>
+	</ul>
+	<div class="panels">
+		<div class="panel php active">
+<pre>
+// https://github.com/kelvinmo/simplejwt
+use SimpleJWT\JWT;
+use SimpleJWT\Keys\KeySet;
+use SimpleJWT\InvalidTokenException;
+
+function get_jwt_token()
+{
+	$api_key = 'YourApiKey';
+	$secret_key = 'YourSecretKey';
+	$url = 'https://api.mycloudfulfillment.com/api/v1/gettoken';
+	$parameters = array( 'apikey' => $api_key, 'secretkey' => $secret_key );
+
+	$ch = curl_init();
+
+	curl_setopt( $ch, CURLOPT_URL, $url );
+	curl_setopt( $ch, CURLOPT_HEADER, true );
+	curl_setopt( $ch, CURLINFO_HEADER_OUT, true );
+	curl_setopt( $ch, CURLOPT_POST, true );
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $parameters );
+
+	$json_data = curl_exec( $ch );
+	$httpStatus = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+
+	curl_close( $ch );
+
+	$token_data = json_decode( $json_data, true );
+
+	$token = $token_data['token'];
+
+	try {
+		$jwt = JWT::decode( $token, $set, 'HS256' );
+		$iat = $jwt->getClaim('iat');
+		$tokenIssued = $iat;
+		$exp = $jwt->getClaim('exp');
+		$tokenExpires = $exp;
+		$iatTime = \DateTime::createFromFormat( 'U', $iat );
+		$expTime = \DateTime::createFromFormat( 'U', $exp );
+		$dateUTC = new \DateTime( null, new \DateTimeZone("UTC") );
+	} catch ( InvalidTokenException $ex ) {
+		$token = NULL;
+	}
+
+	return $token
+}
+</pre>
+		</div>
+
+		<div class="panel csharp">
+<pre>
+C# does not appear to have built-in support for multipart/form-data content.
+However you can find a class written for this purpose here:
+
+   https://briangrinstead.com/blog/multipart-form-post-in-c/
+
+If you can provide native C# code that can post the multipart/form-data, without
+the need for 3rd party code, please provide the example, and we will put it here.
+</pre>
+		</div>
+	</div>
+</div>

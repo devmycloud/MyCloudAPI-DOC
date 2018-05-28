@@ -27,7 +27,15 @@ references = []
 		description="The secretKey that has been assigned to your account."
 
 	[[routes.response]]
-		name="token"
-		type="string"
-		example="87bddb3998b44272ab254c6447ed7f2452a1e581241944ea"
+		name="token_data"
+		type="json"
+		example='{ token: "HS256_encoded_token" }'
 		description="The JWT token to use in RESTful API requests."
+
+	[[routes.examples]]
+		file="get-token.html"
+		markdown=false
+
+	[[routes.examples]]
+		file="use-token.html"
+		markdown=false

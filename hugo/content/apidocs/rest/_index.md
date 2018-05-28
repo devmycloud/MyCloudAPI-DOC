@@ -6,7 +6,7 @@ breadcrumbs = [
 	'RESTful&nbsp;API&nbsp;Documentation'
 ]
 content_class="restful-content rest-model-list"
-list_title="RESTful Documentation"
+list_title="RESTful API Documentation"
 +++
 
 # API Overview
@@ -22,3 +22,4 @@ list_title="RESTful Documentation"
 * [Product](models/product)
 * [ProductCategory](models/product-category)
 * [Shop](models/shop)
+* [Token](models/token)

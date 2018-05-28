@@ -454,6 +454,56 @@ dl.model-attributes dd .methods {
 	margin-top: 40px;
 }
 
+.code-examples {
+	display: block;
+	margin-bottom: 40px;
+}
+.code-examples h5 {
+	font-size: 13pt;
+}
+.code-examples .example-tabs {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+.code-examples .example-tabs li {
+	display: inline-block;
+	padding: 9px 23px;
+	cursor: pointer;
+	background-color: #fff;
+	border-right: 1px solid #ccc;
+}
+.code-examples .example-tabs li:last-child {
+	border-right: none;
+}
+.code-examples .example-tabs li.active {
+	background-color: #f8f8f8;
+}
+.code-examples .panels {
+	display: block;
+	position: relative;
+	border: 1px solid #ccc;
+}
+.code-examples .panels .panel {
+	display: none;
+	padding: 10px;
+}
+.code-examples .panels .panel.active {
+	display: block;
+}
+.code-examples .panels .panel pre {
+	display: block;
+	margin: 0;
+	padding: 0;
+	font-size: 11pt;
+	tab-size: 4;
+	background-color: #fff;
+	font-family: Courier, sans-serif;
+}
+
 
 pre { display: none; }
 pre.show { display: block; }

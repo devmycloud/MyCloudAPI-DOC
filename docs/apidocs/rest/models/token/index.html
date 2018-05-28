@@ -40,7 +40,7 @@
 				>&nbsp;&gt; <a href="../../../../apidocs/">API&nbsp;Docs</a
 				>&nbsp;&gt; <a href="../../../../apidocs/rest/">RESTful&nbsp;Docs</a
 				>&nbsp;&gt; <a href="../../../../apidocs/rest/models/">Models</a
-				>&nbsp;&gt; JWT Token
+				>&nbsp;&gt; Authentication Token
 		</div>
 		
 
@@ -51,11 +51,11 @@
 		</h1>
 
 		<p>
-The MyCloud API uses JWT tokens for authorization.
-JWT (Java Web Token) allows for <em>sessionless</em>
-authentication, which allows for more scalability, as
-well as providing a simple method for clients to manage
-API authentication.
+	The MyCloud API uses JWT tokens for authorization.
+	JWT (Java Web Token) allows for <em>sessionless</em>
+	authentication, which allows for more scalability, as
+	well as providing a simple method for clients to manage
+	API authentication.
 </p>
 
 
@@ -183,21 +183,21 @@ API authentication.
 
 
 
-<div class="mc-table-tr" date-type="leaf" data-path="token" data-origin="rm-rof">
+<div class="mc-table-tr" date-type="leaf" data-path="token_data" data-origin="rm-rof">
 	
 	<div class="mc-table-td rest-field level-1">
 	
 		<div class="rest-field-inner leaf first last">
 		
-		<span class="name">token</span>
+		<span class="name">token_data</span>
 		</div>
 	</div>
 	<div class="mc-table-td rest-type">
 		
-			string
+			json
 		
 	</div>
-	<div class="mc-table-td rest-example">87bddb3998b44272ab254c6447ed7f2452a1e581241944ea</div>
+	<div class="mc-table-td rest-example">{ token: &#34;HS256_encoded_token&#34; }</div>
 	<div class="mc-table-td rest-description">
 		The JWT token to use in RESTful API requests.
 	</div>
@@ -211,6 +211,124 @@ API authentication.
 					</div>
 				</div>
 			</div>
+				
+					<h4>Examples</h4>
+					
+						<div class="code-examples">
+	<h5>Getting a JWT Token</h5>
+	<p>
+		Please note, you do not need to use any library to decode your token.
+		The token may be used as-is with your requests. However, by decoding
+		the token, you are able to get it's expiration time, which can help
+		you with managing tokens within your code.
+	</p>
+
+	<ul class="example-tabs">
+		<li class="active" data-panel="php">PHP</li
+		><li data-panel="csharp">C#</li>
+	</ul>
+	<div class="panels">
+		<div class="panel php active">
+<pre>
+// https://github.com/kelvinmo/simplejwt
+use SimpleJWT\JWT;
+use SimpleJWT\Keys\KeySet;
+use SimpleJWT\InvalidTokenException;
+
+function get_jwt_token()
+{
+	$api_key = 'YourApiKey';
+	$secret_key = 'YourSecretKey';
+	$url = 'https://api.mycloudfulfillment.com/api/v1/gettoken';
+	$parameters = array( 'apikey' => $api_key, 'secretkey' => $secret_key );
+
+	$ch = curl_init();
+
+	curl_setopt( $ch, CURLOPT_URL, $url );
+	curl_setopt( $ch, CURLOPT_HEADER, true );
+	curl_setopt( $ch, CURLINFO_HEADER_OUT, true );
+	curl_setopt( $ch, CURLOPT_POST, true );
+	curl_setopt( $ch, CURLOPT_POSTFIELDS, $parameters );
+
+	$json_data = curl_exec( $ch );
+	$httpStatus = curl_getinfo( $ch, CURLINFO_HTTP_CODE );
+
+	curl_close( $ch );
+
+	$token_data = json_decode( $json_data, true );
+
+	$token = $token_data['token'];
+
+	try {
+		$jwt = JWT::decode( $token, $set, 'HS256' );
+		$iat = $jwt->getClaim('iat');
+		$tokenIssued = $iat;
+		$exp = $jwt->getClaim('exp');
+		$tokenExpires = $exp;
+		$iatTime = \DateTime::createFromFormat( 'U', $iat );
+		$expTime = \DateTime::createFromFormat( 'U', $exp );
+		$dateUTC = new \DateTime( null, new \DateTimeZone("UTC") );
+	} catch ( InvalidTokenException $ex ) {
+		$token = NULL;
+	}
+
+	return $token
+}
+</pre>
+		</div>
+
+		<div class="panel csharp">
+<pre>
+C# does not appear to have built-in support for multipart/form-data content.
+However you can find a class written for this purpose here:
+
+   https://briangrinstead.com/blog/multipart-form-post-in-c/
+
+If you can provide native C# code that can post the multipart/form-data, without
+the need for 3rd party code, please provide the example, and we will put it here.
+</pre>
+		</div>
+	</div>
+</div>
+
+						<div class="code-examples">
+	<h5>Using a JWT Token</h5>
+	<p>
+		Once you have retrieved your JWT token, you simply
+		include it in your Authorization header.
+	</p>
+
+	<ul class="example-tabs">
+		<li class="active" data-panel="php">PHP</li
+		><li data-panel="csharp">C#</li>
+	</ul>
+	<div class="panels">
+		<div class="panel php active">
+<pre>
+	...
+
+    curl_setopt( $ch, CURLOPT_HTTPHEADER, array(
+		'Authorization: Bearer ' . $token
+		)
+	);
+
+	...
+</pre>
+		</div>
+
+		<div class="panel csharp">
+<pre>
+	...
+
+	request.Headers.Add( "Authorization", "Bearer " + token );
+
+	...
+</pre>
+		</div>
+	</div>
+</div>
+
+				
 			
 
 			
@@ -218,68 +336,7 @@ API authentication.
 		</div>
 	
 
-<script type="text/javascript">
-$(document).ready(function() {
-	console.log( "MyCloud API DOC (ready)" );
-
-	function control_node(node, isCollapsing) {
-		var path = node.data('path');
-		var startPath = path + '.';
-		console.log( "--- control_node() isCollapsing=" + isCollapsing + "  ------------------------" );
-		console.log( node );
-		console.log( "   path       = '" + path + "'" );
-		console.log( "   startPath  = '" + startPath + "'" );
-
-		node.find('~ .mc-table-tr').each(function() {
-			var subPath = $(this).data('path');
-			var nodeType = $(this).data('type');
-			var thisCollapsed = $(this).hasClass('collapsed');
-			console.log( "   subPath    = '" + subPath + "'" );
-			console.log( "   nodeType   = '" + nodeType + "'" );
-			console.log( "   thisColp   = '" + thisCollapsed + "'" );
-
-			if ( nodeType == 'node' ) {
-				if ( subPath.startsWith(startPath) ) {
-					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
-						
-						
-						if ( isCollapsing || ! thisCollapsed ) {
-							control_node($(this), isCollapsing);
-						}
-						if ( isCollapsing ) {
-							$(this).addClass('closed');
-						} else {
-							$(this).removeClass('closed');
-						}
-					}
-				}
-			} else {
-				if ( subPath.startsWith(startPath) ) {
-					if ( subPath.indexOf( '.', startPath.length ) == -1 ) {
-						if ( isCollapsing ) {
-							$(this).addClass('closed');
-						} else {
-							$(this).removeClass('closed');
-						}
-					}
-				}
-			}
-		});
-	}
-
-	$('.rest-field-inner .ctl').on('click', function() {
-		var thisRow = $(this).parents('.mc-table-tr');
-
-		control_node( thisRow, ! thisRow.hasClass('collapsed') );
-
-		if ( thisRow.hasClass('collapsed') ) {
-			thisRow.removeClass('collapsed');
-		} else {
-			thisRow.addClass('collapsed');
-		}
-	});
-})
-</script>
+	<script src="../../../../js/mycloud.js" type="text/javascript"></script>
 </body>
 </html>
 

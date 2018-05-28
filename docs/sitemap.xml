@@ -3,128 +3,128 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/authentication/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/authentication/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/connection/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/connection/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-api/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/overview-api/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview-protocol/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/overview-protocol/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/overview/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/overview/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/overview/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/overview/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/overview/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/overview/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/readme/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/readme/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/categories/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/token/</loc>
+  </url>
+  
+  <url>
+    <loc>http://localhost/MyCloudAPI-DOC/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/customer/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/customer/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/customer/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/customer/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/delivery-mode/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/delivery-mode/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/token/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/order/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/order/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/order-item/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/order-item/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order-item/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order-item/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/product/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/product/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/product-category/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/product-category/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product-category/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product-category/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/php/models/shop/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/php/models/shop/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/shop/</loc>
   </url>
   
   <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/shop/</loc>
-  </url>
-  
-  <url>
-    <loc>https://devmycloud.github.io/MyCloudAPI-DOC/tags/</loc>
+    <loc>http://localhost/MyCloudAPI-DOC/tags/</loc>
     <priority>0</priority>
   </url>
   

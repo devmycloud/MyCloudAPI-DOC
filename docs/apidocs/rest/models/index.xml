@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MyCloudFulfillment API Documentation</title>
-    <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/</link>
+    <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/</link>
     <description>Recent content on MyCloudFulfillment API Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost/MyCloudAPI-DOC/apidocs/rest/models/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Customer</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/customer/</link>
+      <title>Authentication Token</title>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/customer/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/token/</guid>
+      <description> The MyCloud API uses JWT tokens for authorization. JWT (Java Web Token) allows for sessionless authentication, which allows for more scalability, as well as providing a simple method for clients to manage API authentication. </description>
+    </item>
+    
+    <item>
+      <title>Customer</title>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/customer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/customer/</guid>
       <description> The Customer model a customer defined by your shop. Customers allow you to quickly define the recipient information for a given order. Customers are typically defined for customers who order more than a single time. </description>
     </item>
     
     <item>
       <title>Delivery Mode</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/delivery-mode/</guid>
       <description> The Delivery Mode model represents a mode of delivery that is defined for your shop. </description>
     </item>
     
     <item>
-      <title>JWT Token</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/token/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/token/</guid>
-      <description> The MyCloud API uses JWT tokens for authorization. JWT (Java Web Token) allows for sessionless authentication, which allows for more scalability, as well as providing a simple method for clients to manage API authentication. </description>
-    </item>
-    
-    <item>
       <title>Order</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order/</guid>
       <description>The Order model represents an order placed with your shop. Orders consist of OrderItems, which are the Products that are attached to the order. An order can have a Customer attached to it, but this is not required. And order must have a DeliveryMode attached to it to select the method of shipment. The payment attributes are provided for the customer to indicate to the shop when and how payment was made so the shop can verify payment.</description>
     </item>
     
     <item>
       <title>OrderItem</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order-item/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order-item/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/order-item/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/order-item/</guid>
       <description>The OrderItem model represents a product that is an item on an order for your shop. For each product that is part of an order, there will be an order item. In other words, order items connect products to orders. Furthermore, an order item also defines the quantity of the product being ordered, as well as the actual price the product is being sold for on that order.  Using OrderItems can be a little confusing at first.</description>
     </item>
     
     <item>
       <title>Product</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product/</guid>
       <description> The Product model defines a product in your shop. Products are warehoused at MyCloud and are avaialable to be added to Orders via OrderItems. </description>
     </item>
     
     <item>
       <title>ProductCategory</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product-category/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product-category/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/product-category/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/product-category/</guid>
       <description> The ProductCategory model represents a product category used for organizing your products. </description>
     </item>
     
     <item>
       <title>Shop</title>
-      <link>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/shop/</link>
+      <link>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/shop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://devmycloud.github.io/MyCloudAPI-DOC/apidocs/rest/models/shop/</guid>
+      <guid>http://localhost/MyCloudAPI-DOC/apidocs/rest/models/shop/</guid>
       <description> The Shop model represents your shop. Note that this model is read-only. You can retrieve your Shop&#39;s model to access the information assigned to your shop, but the API does not provide any means for updating the </description>
     </item>
     

@@ -147,6 +147,17 @@
 					</div>
 				</div>
 			</div>
+				{{ if $route.examples }}
+					<h4>Examples</h4>
+					{{ range $index, $example := sort $route.examples "number" "asc" }}
+						{{ $file := print "/layouts/examples/" $example.file }}
+						{{- if $example.markdown -}}
+							{{- $file | readFile | markdownify -}}
+						{{- else -}}
+							{{ $file | readFile | safeHTML }}
+						{{- end -}}
+					{{ end }}
+				{{ end }}
 			{{ end }}
 
 			{{ if $resource.references }}
