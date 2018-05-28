@@ -1,6 +1,7 @@
 +++
 nolist = true
 breadcrumbs = [
+	'<a href="/">Home</a>',
 	'<a href="/apidocs/">API&nbsp;Documentation</a>',
 	'PHP&nbsp;SDK&nbsp;Documentation'
 ]
