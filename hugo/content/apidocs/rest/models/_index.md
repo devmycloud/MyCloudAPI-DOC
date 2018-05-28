@@ -3,7 +3,7 @@ content_class="restful-content rest-model-list"
 list_title="RESTful API Models"
 breadcrumbs=[
 	'<a href="/apidocs/">API&nbsp;Docs</a>',
-	'<a href="/apidocs/rest/">RESTful&nbsp;Docs</a>',
+	'<a href="/apidocs/rest/">RESTful&nbsp;Documentation</a>',
 	'RESTful&nbsp;API&nbsp;Models'
 	]
 +++
