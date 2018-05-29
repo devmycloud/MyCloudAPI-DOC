@@ -9,7 +9,8 @@
 
 	<ul class="example-tabs">
 		<li class="active" data-panel="php">PHP</li
-		><li data-panel="csharp">C#</li>
+		><li data-panel="csharp">C#</li
+		><li data-panel="dotnet">.NET&nbsp;4.5+</li>
 	</ul>
 	<div class="panels">
 		<div class="panel php active">
@@ -70,6 +71,24 @@ However you can find a class written for this purpose here:
 
 If you can provide native C# code that can post the multipart/form-data, without
 the need for 3rd party code, please provide the example, and we will put it here.
+</pre>
+		</div>
+
+		<div class="panel dotnet">
+<pre>
+HttpClient httpClient = new HttpClient();
+MultipartFormDataContent form = new MultipartFormDataContent();
+form.Add(new StringContent(apikey), "apikey");
+form.Add(new StringContent(secretkey), "secretkey");
+HttpResponseMessage response = await httpClient.PostAsync("https://api.mycloudfulfillment.com/api/v1/gettoken", form);
+response.EnsureSuccessStatusCode();
+httpClient.Dispose();
+string json_data = response.Content.ReadAsStringAsync().Result;
+//
+// Assuming you are using Json.NET: https://www.newtonsoft.com/json
+//
+dynamic token_data = JsonConvert.DeserializeObject( json_data );
+string token = token_data.token;
 </pre>
 		</div>
 	</div>

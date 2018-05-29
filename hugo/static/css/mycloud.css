@@ -490,6 +490,8 @@ dl.model-attributes dd .methods {
 .code-examples .panels .panel {
 	display: none;
 	padding: 10px;
+	height: 20em;
+	overflow: auto;
 }
 .code-examples .panels .panel.active {
 	display: block;
