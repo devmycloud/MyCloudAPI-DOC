@@ -5,7 +5,7 @@ references = []
 [[routes]]
 	id="get_token"
 	name="Get A Fresh JWT Authentication Token"
-	method="GET"
+	method="POST"
 	url="/gettoken"
 	title="Get a fresh JWT token."
 	description="""Get a fresh JWT authentication token that can \
@@ -20,7 +20,7 @@ references = []
 		description="The apiKey that has been assigned to your account."
 
 	[[routes.parameters]]
-		name="secretKey"
+		name="secretkey"
 		type="string"
 		required=true
 		example="87bddb3998b44272ab254c6447ed7f2452a1e581241944ea"
