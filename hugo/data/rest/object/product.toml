@@ -22,13 +22,13 @@ name="product"
 	description="The name of the product as it should be presented to the buyer."
 [[fields]]
 	name="cost"
-	type="integer"
-	example='129'
+	type="double"
+	example='129.00'
 	description="The is the amount that the shop pays to buy the product."
 [[fields]]
 	name="price"
-	type="integer"
-	example='199'
+	type="double"
+	example='199.00'
 	description="""This is price that the shop typically sells the product for. \
 	This can be overridden within an order when defining the orderitem for this product. \
 	"""

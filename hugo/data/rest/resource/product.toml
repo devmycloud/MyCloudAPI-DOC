@@ -82,16 +82,16 @@ references = []
 
 	[[routes.parameters]]
 		name="cost"
-		type="integer"
+		type="double"
 		required=false
-		example="129"
+		example="129.00"
 		description="The price the shop pays to purchase this product."
 
 	[[routes.parameters]]
 		name="price"
-		type="integer"
+		type="double"
 		required=true
-		example="199"
+		example="199.00"
 		description="The price the shop charges buyers to purchase this product."
 
 	[[routes.response]]
@@ -149,16 +149,16 @@ references = []
 
 	[[routes.parameters]]
 		name="cost"
-		type="integer"
+		type="double"
 		required=false
-		example="129"
+		example="129.00"
 		description="The price the shop pays to purchase this product."
 
 	[[routes.parameters]]
 		name="price"
-		type="integer"
+		type="double"
 		required=false
-		example="199"
+		example="199.00"
 		description="The price the shop charges buyers to purchase this product."
 
 	[[routes.response]]

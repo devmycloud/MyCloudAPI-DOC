@@ -139,9 +139,9 @@ references = []
 
 	[[routes.parameters]]
 		name="   order_items[index][price]"
-		type="integer"
+		type="double"
 		required=true
-		example="199"
+		example="199.00"
 		description="""The price of this product for this order item. \
 		"""
 
@@ -240,9 +240,9 @@ references = []
 
 	[[routes.parameters]]
 		name="   order_items[index][price]"
-		type="integer"
+		type="double"
 		required=true
-		example="199"
+		example="199.00"
 		description="""The price of this product for this order item. \
 		"""
 
